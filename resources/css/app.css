@@ -1,0 +1,52 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@import "swiper/swiper-bundle.css";
+input[type="text"], input[type="url"], input[type="email"],input[type="color"], select, textarea {
+    @apply bg-gray-50 border text-sm border-gray-300 text-gray-900 rounded-lg focus:ring-indigo-500 focus:border-indigo-500 block w-full p-2.5;
+}
+
+label {
+    @apply block mb-2  font-medium text-gray-900;
+}
+
+input[type="submit"] {
+    @apply bg-indigo-500 text-sm text-white px-4 py-2 rounded mt-6 cursor-pointer hover:scale-105;
+}
+
+input[type="file"] {
+    @apply block w-full text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50  focus:outline-none
+}
+
+
+body {
+    width: 100vw;
+    overflow-x: hidden;
+}
+.with-shadow{
+    @apply relative
+}
+.with-shadow::after {
+    @apply absolute w-8/12 aspect-video bg-slate-500 -bottom-[15%] -right-[15%] ;
+    z-index: -1;
+    content: "";
+}
+
+
+td{
+    @apply px-6 py-4
+}
+
+th{
+    @apply px-6 py-4 font-black text-gray-900 whitespace-nowrap
+}
+tr{
+    @apply bg-white border-b
+}
+thead{
+    @apply text-xs text-gray-700 uppercase bg-gray-50
+}
+
+table {
+    @apply w-full text-sm text-left text-gray-500
+}
