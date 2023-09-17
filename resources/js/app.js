@@ -1,7 +1,6 @@
 import "flowbite";
-import Swiper, {Navigation} from 'swiper';
+import Swiper from 'swiper';
 
-Swiper.use([Navigation]);
 
 const swiper = new Swiper('.swiper', {
     observer: true,
