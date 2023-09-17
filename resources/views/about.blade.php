@@ -4,7 +4,7 @@
 @endsection
 @section("content")
     <div class="relative">
-        <img class="w-screen min-h-[70vh]" src="{{asset('/about.png')}}" alt="">
+        <img class="w-screen min-h-[70vh]" src="{{asset('/about.webp')}}" alt="">
         <div
             class="absolute bg-gradient-to-t from-[rgba(250,250,250,1)] to-transparent via-[rgba(0,0,0,0.4)] inset-0 text-white text-center flex items-center justify-center flex-col z-10">
             <div class="max-w-4xl px-4 lg:px-0 flex flex-col gap-8">
@@ -15,7 +15,7 @@
             </div>
         </div>
     </div>
-    <div style="background-image: url({{asset('/bg-about.png')}})" class="bg-no-repeat">
+    <div style="background-image: url({{asset('/bg-about.webp')}})" class="bg-no-repeat">
         <div class="py-24 max-w-7xl mx-auto">
             <div class="px-4 lg:px-0 w-full lg:w-6/12 flex justify-end gap-6 flex-col ml-auto">
                 <h1 class="text-4xl lg:text-5xl uppercase ">
@@ -101,7 +101,7 @@
             create tailor-made solutions that address their specific needs.
         </p>
         <div class="relative w-full with-shadow">
-            <img class="w-full" src="{{asset('hospitality-consultancy.jpg')}}"
+            <img class="w-full" src="{{asset('hospitality-consultancy.webp')}}"
                  alt="Hospitality Consultancy">
         </div>
     </div>
@@ -112,7 +112,7 @@
         </h1>
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-24 ">
             <div class="relative with-shadow">
-                <img class="w-full " src="{{asset('giving-back-to-the-community.png')}}"
+                <img class="w-full " src="{{asset('giving-back-to-the-community.webp')}}"
                      alt="GIVING BACK TO THE COMMUNITY">
             </div>
             <p class="text-left">

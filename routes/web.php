@@ -133,7 +133,7 @@ Route::group(['middleware' => 'web', 'prefix' => 'admin'], function () {
             $file->move($path, $filename);
             $data["video"] = $filename;
         }
-        DB::table("site_settings")->update($data);
+        DB::table("site_settings")->insert($data);
         return redirect()->back();
     })->name('settings-controller');
 });

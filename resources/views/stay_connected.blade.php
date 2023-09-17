@@ -4,7 +4,7 @@
 @endsection
 @section('content')
     <div class="relative">
-        <img class="w-screen min-h-[70vh]" src="{{asset('/get-in-touch.png')}}" alt="Get in touch">
+        <img class="w-screen min-h-[70vh]" src="{{asset('/get-in-touch.webp')}}" alt="Get in touch">
         <div
             class="absolute bg-gradient-to-t from-[rgba(250,250,250,1)] to-transparent via-[rgba(0,0,0,0.4)] inset-0 text-white text-center flex items-center justify-center flex-col z-10">
             <div class="max-w-4xl px-4 lg:px-0 flex flex-col gap-8">
