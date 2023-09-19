@@ -14,14 +14,14 @@
                 @endif
                 @if(request()->type === 'investment')
                     Interested in joining our future Vision?
-                    <p class="font-medium text-base mt-2">
+                    <p class="font-light text-base mt-2">
                         Kindly fill in the below form and our business development team will contact you as soon as
                         possible
                     </p>
                 @endif
                 @if(request()->type === 'marketing')
                     Want to connect with our marketing department?
-                    <p class="font-medium text-base mt-2">
+                    <p class="font-light text-base mt-2">
                         Send your requirements to marketing signature, our team is always open for opportunities
                     </p>
                 @endif

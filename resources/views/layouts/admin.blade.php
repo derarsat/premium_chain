@@ -20,21 +20,21 @@
     >
         <a
             href="{{ route('admin.index') }}"
-            class="font-bold italic text-lg text-indigo-600"
+            class="font-black italic text-lg text-indigo-600"
         >
             PREMIUM CHAIN
         </a>
         <div class="flex items-center gap-3">
-            <div class="flex items-center gap-4 text-gray-600 font-medium">
+            <div class="flex items-center gap-4 text-gray-600 font-light">
                 <a href="{{ route('brands.index') }}">Brands</a>
             </div>
-            <div class="flex items-center gap-4 text-gray-600 font-medium">
+            <div class="flex items-center gap-4 text-gray-600 font-light">
                 <a href="{{ route('admin.contacts') }}">Contact Messages</a>
             </div>
-            <div class="flex items-center gap-4 text-gray-600 font-medium">
+            <div class="flex items-center gap-4 text-gray-600 font-light">
                 <a href="{{ route('admin.settings-admin') }}"> Settings</a>
             </div>
-            <div class="flex items-center gap-4 text-gray-600 font-medium">
+            <div class="flex items-center gap-4 text-gray-600 font-light">
                 <a href="{{ route('admin.rate-messages') }}">Customers Feedback</a>
             </div>
         </div>

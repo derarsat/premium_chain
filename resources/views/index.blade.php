@@ -77,13 +77,13 @@
                <img src="{{asset("/food-bev-card.webp")}}" alt="Premium Chain Food">
            </div>
        </div>
-       <div class="relative">
-           <img src="{{asset('stay-connected.webp')}}" alt="Stay connected">
+       <div class="relative min-h-[70vh]">
+           <img class="h-full" src="{{asset('stay-connected.webp')}}" alt="Stay connected">
            <div
                class="absolute bg-gradient-to-t from-[rgba(0,0,0,1)] to-transparent via-[rgba(0,0,0,0.4)] inset-0 text-white text-center flex items-center justify-center flex-col z-10">
                <div class="max-w-4xl px-4 lg:px-0 flex flex-col gap-8">
-                   <h1 class="text-3xl lg:text-5xl font-bold uppercase">Join Our Team</h1>
-                   <h4 class="font-medium">If you have the passion, drive, and devotion to hospitality and success as we
+                   <h1 class="text-3xl lg:text-5xl font-black uppercase">Join Our Team</h1>
+                   <h4 class="font-light">If you have the passion, drive, and devotion to hospitality and success as we
                        do, then join the team and become a valuable addition to the Premium Chain family. </h4>
                    <div class="flex justify-center">
                        <a href="{{route('contact-us-view','carriers')}}"

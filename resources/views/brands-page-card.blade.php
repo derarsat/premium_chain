@@ -58,14 +58,14 @@
      style="background: url({{ @App::make('url')->to('/') . '/storage' . $brand->page_background}})">
     <div class="w-[1024px] p-6 lg:p-24 bg-white flex flex-col gap-8 " style="color: {{$brand->color}}">
         <img class="w-32 mx-auto" src="{{ @App::make('url')->to('/') . '/storage' . $brand->page_logo}}" alt="">
-        <h2 class="font-medium text-center text-3xl">We value your feedback</h2>
+        <h2 class="font-light text-center text-3xl">We value your feedback</h2>
         @if(session()->has('message'))
             <p class="bg-green-500 text-white p-4 mb-6 rounded-md text-center"> {{ session()->get('message') }}</p>
         @endif
         <form action="{{route('submit-create-rate-messages')}}" method="post">
             @csrf
             <div class="grid grid-cols-4 gap-8 items-center justify-end py-24 text-center">
-                <h1 class="text-2xl font-medium text-left">Rating</h1>
+                <h1 class="text-2xl font-light text-left">Rating</h1>
                 <span>Average</span>
                 <span>Good</span>
                 <span>Excellent</span>
@@ -80,7 +80,7 @@
 
 
             <div class="flex flex-col gap-8">
-                <h1 class="text-2xl font-medium mb-12">About you</h1>
+                <h1 class="text-2xl font-light mb-12">About you</h1>
                 <div>
                     <label for="name">Full name</label>
                     <input required type="text" id="name" name="name">
@@ -105,7 +105,7 @@
 
         <div class="flex items-center flex-col justify-center gap-1">
             <h1 class="font-black text-3xl">Thank You</h1>
-            <p class="font-bold">For Your Feedback</p>
+            <p class="font-black">For Your Feedback</p>
         </div>
     </div>
 </div>

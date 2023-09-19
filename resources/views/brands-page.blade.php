@@ -13,12 +13,12 @@
             <div class="max-w-4xl px-4 lg:px-0 flex flex-col gap-8">
                 <img class="w-96 mx-auto" src="{{ @App::make('url')->to('/') . '/storage' . $brand->logo}}"
                      alt="{{$brand->name}}">
-                <h4 class="font-medium">{{$brand->description}}</h4>
+                <h4 class="font-light">{{$brand->description}}</h4>
             </div>
         </div>
     </div>
     <div class="max-w-4xl text-center mx-auto py-24">
-        <h1 class="text-3xl lg:text-5xl font-medium uppercase text-center mb-6">Brand <span
+        <h1 class="text-3xl lg:text-5xl font-light uppercase text-center mb-6">Brand <span
                 class="font-black">Atmosphere</span></h1>
         <p>Signature Hospitality travels the world with operations in 8 diverse countries. Headquartered in Riyadh, our
             consultancy and management agency boasts 25 years of experience as the forefront of our work.</p>
@@ -68,13 +68,13 @@
 
     <div class="container">
         <div class="max-w-4xl text-center mx-auto py-24">
-            <h1 class="text-3xl lg:text-5xl font-medium uppercase text-center mb-6">Our <span
+            <h1 class="text-3xl lg:text-5xl font-light uppercase text-center mb-6">Our <span
                     class="font-black">Locations</span></h1>
             <p>With the help of Premium Chain, our clients have turned a new page on their businesses to find success in
                 various corners of the world. </p>
         </div>
         <div class="mb-4 ">
-            <ul class="flex flex-wrap justify-center -mb-px text-sm font-medium text-center" id="tab"
+            <ul class="flex flex-wrap justify-center -mb-px text-sm font-light text-center" id="tab"
                 data-tabs-toggle="#areas"
                 role="tablist">
                 @foreach($brand->areas as $area)

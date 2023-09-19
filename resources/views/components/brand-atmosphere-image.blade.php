@@ -1,5 +1,5 @@
 <div>
-    <h1 class="py-4 font-medium text-2xl text-gray-700">Create new brands hero image</h1>
+    <h1 class="py-4 font-light text-2xl text-gray-700">Create new brands hero image</h1>
     <form enctype="multipart/form-data" class=" p-4 rounded" method="POST"
           action="{{ route('brand-atmosphere-images.store') }}">
         @csrf
@@ -36,13 +36,13 @@
             <tr class="bg-white border-b">
                 <th
                     scope="row"
-                    class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap"
+                    class="px-6 py-4 font-light text-gray-900 whitespace-nowrap"
                 >
                     {{$image->id}}
                 </th>
                 <th
                     scope="row"
-                    class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap"
+                    class="px-6 py-4 font-light text-gray-900 whitespace-nowrap"
                 >
                     <img class="w-32" src="{{ @App::make('url')->to('/') . '/storage' . $image->image}}" alt="">
 

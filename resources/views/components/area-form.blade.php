@@ -1,6 +1,6 @@
 <form class="p-4 rounded" method="POST" action="{{ route('brands.store') }}?model=area">
     @csrf
-    <h1 class="py-4 font-medium text-2xl text-gray-700">Create new area</h1>
+    <h1 class="py-4 font-light text-2xl text-gray-700">Create new area</h1>
     <div class="grid grid-cols-3 gap-6">
         <div>
             <label for="name">Area name</label>

@@ -12,13 +12,13 @@
             <tr class="bg-white border-b">
                 <th
                     scope="row"
-                    class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap"
+                    class="px-6 py-4 font-light text-gray-900 whitespace-nowrap"
                 >
                     {{$country->id}}
                 </th>
                 <th
                     scope="row"
-                    class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap"
+                    class="px-6 py-4 font-light text-gray-900 whitespace-nowrap"
                 >
                     {{$country->name}}
                 </th>
@@ -29,7 +29,7 @@
                         data-country-id="{{$country->id}}"
                         data-modal-target="country-edit-modal"
                         data-modal-toggle="country-edit-modal"
-                        class="font-medium text-indigo-600 hover:underline flex gap-1 items-center"
+                        class="font-light text-indigo-600 hover:underline flex gap-1 items-center"
                     >
                         <svg
                             xmlns="http://www.w3.org/2000/svg"
@@ -51,7 +51,7 @@
                     <button
                         data-modal-target="country-delete-modal"
                         data-modal-toggle="country-delete-modal"
-                        class="font-medium text-red-600 hover:underline flex gap-1 items-center"
+                        class="font-light text-red-600 hover:underline flex gap-1 items-center"
                         onclick="handleCountryDelete(event)"
                         data-country-id="{{$country->id}}"
                     >
@@ -112,7 +112,7 @@
                 <span class="sr-only">Close modal</span>
             </button>
             <div class="px-6 py-6 lg:px-8">
-                <h3 class="mb-6 text-xl font-medium text-gray-900">
+                <h3 class="mb-6 text-xl font-light text-gray-900">
                     Update country
                 </h3>
                 <form
@@ -193,7 +193,7 @@
                     <input type="hidden" name="id" id="delete-country-id">
                     <button
                         data-modal-hide="country-delete-modal"
-                        class="text-white bg-red-600  font-medium rounded-lg text-sm inline-flex items-center px-4 py-2 text-center mr-2"
+                        class="text-white bg-red-600  font-light rounded-lg text-sm inline-flex items-center px-4 py-2 text-center mr-2"
                     >
                         Yes, I'm sure
                     </button>
@@ -203,7 +203,7 @@
                 <button
                     data-modal-hide="country-delete-modal"
                     type="button"
-                    class="text-gray-500 bg-white  rounded-lg border border-gray-200 text-sm font-medium px-4 py-2 hover:text-gray-900 focus:z-10"
+                    class="text-gray-500 bg-white  rounded-lg border border-gray-200 text-sm font-light px-4 py-2 hover:text-gray-900 focus:z-10"
                 >
                     No, cancel
                 </button>

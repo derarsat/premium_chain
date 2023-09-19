@@ -68,7 +68,7 @@
                 <td id="accordion-collapse" data-accordion="collapse" class="width-auto">
                     <h2 id="accordion-collapse-heading-{{$message->id}}">
                         <button type="button"
-                                class="flex items-center justify-between w-full p-5 font-medium text-left "
+                                class="flex items-center justify-between w-full p-5 font-light text-left "
                                 data-accordion-target="#accordion-collapse-body-{{$message->id}}" aria-expanded="false"
                                 aria-controls="accordion-collapse-body-{{$message->id}}">
                             <span>Expand </span>

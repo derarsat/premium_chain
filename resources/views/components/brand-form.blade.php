@@ -1,6 +1,6 @@
 <form enctype="multipart/form-data" class=" p-4 rounded" method="POST" action="{{ route('brands.store') }}?model=brand">
     @csrf
-    <h1 class="py-4 font-medium text-2xl text-gray-700">Create new brand</h1>
+    <h1 class="py-4 font-light text-2xl text-gray-700">Create new brand</h1>
     <div class="grid grid-cols-3 gap-4">
         <div>
             <label for="name">Name</label>

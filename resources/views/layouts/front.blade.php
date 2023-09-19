@@ -31,7 +31,10 @@
     </div>
 </header>
 <header class="block lg:hidden bg-black text-white p-4 flex items-center justify-between">
-    <img class="w-[7rem] " src="{{asset('/premium-chain.png')}}" alt="Premium Chain">
+    <a href="/">
+        <img class="w-[7rem] " src="{{asset('/premium-chain.png')}}" alt="Premium Chain">
+
+    </a>
     <button
         type="button" data-drawer-target="drawer-example" data-drawer-show="drawer-example"
         aria-controls="drawer-example">

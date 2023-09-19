@@ -16,7 +16,7 @@
             </p>
             {{--Loop--}}
             {{--Top--}}
-            <ul class="flex flex-wrap justify-center -mb-px text-sm font-medium text-center" id="tab"
+            <ul class="flex flex-wrap justify-center -mb-px text-sm font-light text-center" id="tab"
                 data-tabs-toggle="#countries"
                 role="tablist">
                 @foreach($countries as $country)
@@ -30,7 +30,7 @@
                             <span id="{{str_replace(" ","-",$country->name)}}dropdownHoverButton"
                                   data-dropdown-toggle="{{str_replace(" ","-",$country->name)}}dropdownHover"
                                   data-dropdown-trigger="hover"
-                                  class="font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center "
+                                  class="font-light rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center "
                                   type="button">
                                 {{$country->name}}
                             </span>

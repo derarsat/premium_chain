@@ -12,18 +12,18 @@
             <tr class="bg-white border-b">
                 <th
                     scope="row"
-                    class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap"
+                    class="px-6 py-4 font-light text-gray-900 whitespace-nowrap"
                 >
                     {{$brand->id}}
                 </th>
                 <th
                     scope="row"
-                    class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap"
+                    class="px-6 py-4 font-light text-gray-900 whitespace-nowrap"
                 >
                     {{$brand->name}}
                 </th>
                 <td class="px-6 py-4 flex gap-3">
-                  
+
                 </td>
             </tr>
             @endforeach

@@ -71,7 +71,7 @@
                <div >
                    <img class="mb-4" src="{{asset('/ghassan-attar.webp')}}" alt="ghassan-attar">
                    <div class="grid grid-cols-1 gap-4 ">
-                       <h1 class="text-3xl font-bold"> Ghassan Attar</h1>
+                       <h1 class="text-3xl font-black"> Ghassan Attar</h1>
                        <h2 class="text-4xl font-light">CHAIRMAN</h2>
                        <p class=" font-normal">
                            Our Chairman Ghassan Attar in also a Board Member at Rolex. Attar Travel, and currently an agent
@@ -86,7 +86,7 @@
        <div class=" max-w-7xl text-center mx-auto px-4 lg:px-0 grid grid-cols-1 gap-8">
            <h1 class="text-3xl lg:text-5xl lg:text-5xl uppercase ">
                <span class="font-normal">Hospitality </span>
-               <span class="font-bold">consultancy</span>
+               <span class="font-black">consultancy</span>
            </h1>
            <p class="">
                Premium Hospitality has a diverse division that offers a range of services to clients wanting to start their
@@ -108,7 +108,7 @@
        <div class="max-w-7xl text-center mx-auto px-4 lg:px-0 grid grid-cols-1 gap-8 mb-12">
            <h1 class="text-3xl lg:text-5xl uppercase">
                <span class="font-normal">GIVING BACK  </span>
-               <span class="font-bold">TO THE COMMUNITY</span>
+               <span class="font-black">TO THE COMMUNITY</span>
            </h1>
            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-24 ">
                <div class="relative with-shadow">
