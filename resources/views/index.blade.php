@@ -2,7 +2,7 @@
 @section('title','Home')
 @section('content')
    <main class="grid grid-cols-1 gap-12 lg:gap-24">
-       <div class="relative min-h-[70vh]">
+       <div class="relative hidden lg:block">
            <div class="hidden lg:block">
                @if(isset($settings))
                    <video width="100%" height="100%" autoplay muted loop controls style="object-fit: cover"
@@ -10,7 +10,27 @@
                @endif
            </div>
            <div
-               class="px-4 lg:px-0 text-white bg-black lg:bg-gradient-to-t from-[rgba(250,250,250,1)] to-transparent via-[rgba(0,0,0,0.4)] absolute inset-0 flex items-center justify-center flex-col gap-4">
+               class="px-4 lg:px-0 text-white bg-gradient-to-t from-[rgba(250,250,250,1)] to-transparent via-[rgba(0,0,0,0.4)] absolute inset-0 flex items-center justify-center flex-col gap-4">
+               <h1 class="text-3xl lg:text-5xl flex-col flex text-center">
+                   <span class="font-light">EVERY CHALLENGE</span>
+                   <span class="font-black">HAS A SOLUTION</span>
+               </h1>
+               <p class="max-w-4xl mx-auto text-center">
+                   Signature Hospitality brings change and success to the forefront of a brand or business.
+                   We believe in the power of positive experiences that can help a brand tackle its problems, pinpoint the
+                   areas for improvement, and soar to new and exciting heights.
+               </p>
+           </div>
+       </div>
+       <div class="relative  lg:hidden block min-h-[70vh]">
+           <div class="hidden lg:block">
+               @if(isset($settings))
+                   <video width="100%" height="100%" autoplay muted loop controls style="object-fit: cover"
+                          src="{{URL::asset('uploads/'.$settings->video)}}"></video>
+               @endif
+           </div>
+           <div
+               class="px-4 lg:px-0 text-white bg-black absolute inset-0 flex items-center justify-center flex-col gap-4">
                <h1 class="text-3xl lg:text-5xl flex-col flex text-center">
                    <span class="font-light">EVERY CHALLENGE</span>
                    <span class="font-black">HAS A SOLUTION</span>
