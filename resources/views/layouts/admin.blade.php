@@ -29,10 +29,13 @@
                 <a href="{{ route('brands.index') }}">Brands</a>
             </div>
             <div class="flex items-center gap-4 text-gray-600 font-medium">
+                <a href="{{ route('admin.contacts') }}">Contact Messages</a>
+            </div>
+            <div class="flex items-center gap-4 text-gray-600 font-medium">
                 <a href="{{ route('admin.settings-admin') }}"> Settings</a>
             </div>
             <div class="flex items-center gap-4 text-gray-600 font-medium">
-                <a href="{{ route('admin.contacts') }}">Contact Messages</a>
+                <a href="{{ route('admin.rate-messages') }}">Customers Feedback</a>
             </div>
         </div>
     </div>

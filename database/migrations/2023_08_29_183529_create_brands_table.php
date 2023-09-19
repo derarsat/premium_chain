@@ -34,7 +34,7 @@ class CreateBrandsTable extends Migration
             $table->timestamps();
         });
         // Atmosphere
-        Schema::create('brand_atmosphere_images', function (Blueprint $table) {
+        Schema::create('brand_atmospheres', function (Blueprint $table) {
             $table->id();
             $table->foreignIdFor(Brand::class);
             $table->string('image');

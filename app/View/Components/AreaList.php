@@ -3,6 +3,8 @@
 namespace App\View\Components;
 
 use App\Models\Area;
+use App\Models\Brand;
+use App\Models\Country;
 use Illuminate\View\Component;
 
 class AreaList extends Component
@@ -28,6 +30,8 @@ class AreaList extends Component
      */
     public function render()
     {
-        return view('components.area-list');
+        $brands = Brand::all();
+        $countries = Country::all();
+        return view('components.area-list',compact('brands','countries'));
     }
 }

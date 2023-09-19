@@ -3,7 +3,7 @@
 @section('content')
     <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
     <script
-        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDcUJ7w3rr11sYnuJsPlJxkzsgaV_2SAnA&callback=initMaps"
+        src="https://maps.googleapis.com/maps/api/js?key={{env('MAP_KEY')}}&callback=initMaps"
         defer></script>
 
     <div class="relative">
@@ -22,49 +22,104 @@
                 class="font-black">Atmosphere</span></h1>
         <p>Signature Hospitality travels the world with operations in 8 diverse countries. Headquartered in Riyadh, our
             consultancy and management agency boasts 25 years of experience as the forefront of our work.</p>
-    </div>
 
 
+        <!-- Slider main container -->
+        <div class="swiper">
+            <!-- Additional required wrapper -->
+            <div class="swiper-wrapper">
+                <!-- Slides -->
+                @foreach ($brand->images as $image )
+                    <div class="swiper-slide">
+                       <div class="with-shadow">
+                           <img src="{{ @App::make('url')->to('/') . '/storage' . $image->image}}" alt="{{$brand->name}}">
 
-    <div class="max-w-4xl text-center mx-auto py-24">
-        <h1 class="text-3xl lg:text-5xl font-medium uppercase text-center mb-6">Our <span
-                class="font-black">Locations</span></h1>
-        <p>With the help of Premium Chain, our clients have turned a new page on their businesses to find success in
-            various corners of the world. </p>
-    </div>
-    <div class="mb-4 ">
-        <ul class="flex flex-wrap justify-center -mb-px text-sm font-medium text-center" id="tab"
-            data-tabs-toggle="#areas"
-            role="tablist">
-            @foreach($brand->areas as $area)
-                <li class="mr-2" role="presentation">
-                    <button class="inline-block p-4 border-b-2 rounded-t-lg" id="{{$area->name}}-tab"
-                            data-tabs-target="#{{$area->name}}" type="button" role="tab" aria-controls="{{$area->name}}"
-                            aria-selected="false">
-                        {{$area->country->name}}
-                    </button>
-                </li>
-            @endforeach
-        </ul>
-    </div>
-    <div id="tab">
-        @foreach($brand->areas as $area)
-            <div class="hidden p-4 rounded-lg bg-gray-50" id="{{$area->name}}" role="tabpanel"
-                 aria-labelledby="{{$area->name}}-tab">
-                <div id="{{$area->name}}-map" data-lat="{{$area->lat}}" data-lng="{{$area->lng}}"
-                     class="map col-span-3 aspect-[3/1]"></div>
+                       </div>
+                    </div>
+                @endforeach
             </div>
-        @endforeach
-    </div>
-        <div id="mm">
 
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
         </div>
+
+
+    </div>
+
+
+
+    <script>
+        const swiper = new Swiper('.swiper', {
+            observer: true,
+            observeParents: true,
+            spaceBetween: 0,
+            slidesPerView: 1,
+            navigation,
+
+            speed: 100,
+            loop: true,
+            autoplay: {
+                delay: 2500,
+            }
+        })
+
+    </script>
+
+
+    <div class="container">
+        <div class="max-w-4xl text-center mx-auto py-24">
+            <h1 class="text-3xl lg:text-5xl font-medium uppercase text-center mb-6">Our <span
+                    class="font-black">Locations</span></h1>
+            <p>With the help of Premium Chain, our clients have turned a new page on their businesses to find success in
+                various corners of the world. </p>
+        </div>
+        <div class="mb-4 ">
+            <ul class="flex flex-wrap justify-center -mb-px text-sm font-medium text-center" id="tab"
+                data-tabs-toggle="#areas"
+                role="tablist">
+                @foreach($brand->areas as $area)
+                    <li class="mr-2" role="presentation">
+                        <button class="inline-block p-4 border-b-2 rounded-t-lg"
+                                id="{{str_replace(" ","-",$area->name)}}-tab"
+                                data-tabs-target="#{{str_replace(" ","-",$area->name)}}" type="button" role="tab"
+                                aria-controls="{{str_replace(" ","-",$area->name)}}"
+                                aria-selected="false">
+                            {{$area->country->name}}
+                        </button>
+                    </li>
+                @endforeach
+            </ul>
+        </div>
+        <div id="tab">
+            @foreach($brand->areas as $area)
+                <div class="hidden p-4 rounded-lg bg-gray-50" id="{{str_replace(" ","-",$area->name)}}" role="tabpanel"
+                     aria-labelledby="{{str_replace(" ","-",$area->name)}}-tab">
+                    <div id="{{str_replace(" ","-",$area->name)}}-map" data-lat="{{$area->lat}}"
+                         data-lng="{{$area->lng}}"
+                         class="map col-span-3 aspect-[3/1]"></div>
+                </div>
+            @endforeach
+        </div>
+    </div>
+
+
+    <div class="py-44 max-w-7xl text-center mx-auto px-4 lg:px-0">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-24 ">
+            <div class="relative with-shadow">
+                <img class="w-full " src="{{ @App::make('url')->to('/') . '/storage' . $brand->selling_point_image}}"
+                     alt="GIVING BACK TO THE COMMUNITY">
+            </div>
+            <p class="text-left">
+               {{$brand->selling_point_description}}
+            </p>
+        </div>
+    </div>
     <script>
         function initMaps() {
             const mapsWrap = document.querySelectorAll(".map");
             for (let i = 0; i < mapsWrap.length; i++) {
                 let map = mapsWrap[i]
-                let mapId = map.getAttribute("id");
+                let mapId = map.getAttribute("id").replaceAll(" ", "-");
                 let lat = map.getAttribute("data-lat")
                 let lng = map.getAttribute("data-lng")
                 const myLatLng = {lat: Number(lat), lng: Number(lng)};
@@ -74,10 +129,11 @@
                 });
                 let marker = new google.maps.Marker({
                     position: myLatLng,
-                    map:m,
-                    title:"Premium Chain"
+                    map: m,
+                    title: "Premium Chain"
                 });
-                m.setOptions({ styles:[
+                m.setOptions({
+                    styles: [
                         {
                             "elementType": "geometry",
                             "stylers": [
@@ -347,11 +403,11 @@
                                 }
                             ]
                         }
-                    ]});
+                    ]
+                });
 
             }
         }
-
     </script>
 @endsection
 

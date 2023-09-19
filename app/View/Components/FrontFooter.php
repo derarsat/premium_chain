@@ -2,6 +2,7 @@
 
 namespace App\View\Components;
 
+use App\Models\Brand;
 use Illuminate\View\Component;
 
 class FrontFooter extends Component
@@ -23,6 +24,10 @@ class FrontFooter extends Component
      */
     public function render()
     {
-        return view('components.front-footer');
+        $data = [];
+        $data["brands"] = Brand::get(['name', 'id']);
+        $data["settings"] = \DB::table("site_settings")->get()->first();
+
+        return view('components.front-footer', ['data' => $data]);
     }
 }

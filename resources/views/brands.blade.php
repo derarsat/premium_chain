@@ -21,15 +21,15 @@
         <div class="swiper-button-next"></div>
     </div>
     <div class="container text-center py-24 flex flex-col gap-6">
-        <h1 class="text-5xl">OUR SUCCESSFUL BRANDS</h1>
+        <h1 class="text-5xl">OUR <span class="font-black">SUCCESSFUL BRANDS</span></h1>
         <p>With the help of Signature Hospitality, our clients have turned a new page on their businesses <br> to find
             success in various corners of the world. </p>
     </div>
-    <div class="container">
-        <div class="grid grid-cols-4">
+    <div class="max-w-5xl mx-auto px-4 lg:px-0 mb-12">
+        <div class="grid grid-cols-4 gap-24">
             @foreach ($brands as $brand )
                 <a href="{{route('single-brand',$brand->id)}}">
-                    <img src="{{ @App::make('url')->to('/') . '/storage' . $brand->logo}}" alt="{{$brand->name}}">
+                    <img src="{{ @App::make('url')->to('/') . '/storage' . $brand->page_logo}}" alt="{{$brand->name}}">
                 </a>
             @endforeach
         </div>

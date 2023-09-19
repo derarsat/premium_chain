@@ -10,13 +10,20 @@ class Brand extends Model
     {
         return $this->hasMany(BrandAtmosphere::class);
     }
+
     public function areas()
     {
         return $this->hasMany(Area::class);
     }
+
     public function country()
     {
         return $this->belongsTo(Country::class);
+    }
+
+    public function images()
+    {
+        return $this->hasMany(BrandAtmosphereImage::class);
     }
 }
 

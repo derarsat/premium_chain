@@ -28,8 +28,8 @@
             </select>
         </div>
         <div class="">
-            <input readonly name="lat" type="text" id="lat">
-            <input readonly name="lng" type="text" id="lng">
+            <input readonly name="lat" type="hidden" id="lat">
+            <input readonly name="lng" type="hidden" id="lng">
         </div>
 
         <input type="text" id="pac-input" style="position: absolute;top: 2.5%;left: 2.5%;width: 95% !important;">
@@ -43,7 +43,7 @@
 
 <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
 <script
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDcUJ7w3rr11sYnuJsPlJxkzsgaV_2SAnA&callback=initMap&libraries=places&v=weekly"
+    src="https://maps.googleapis.com/maps/api/js?key={{env('MAP_KEY')}}&callback=initMap&libraries=places&v=weekly"
     defer></script>
 <script>
     let map;
@@ -69,10 +69,8 @@
 
         var searchBox = new google.maps.places.SearchBox(document.getElementById('pac-input'));
         map.controls[google.maps.ControlPosition.TOP_CENTER].push(document.getElementById('pac-input'));
-        google.maps.event.addListener(searchBox, 'places_changed', function () {
+        new google.maps.event.addListener(searchBox, 'places_changed', function () {
             searchBox.set('map', null);
-
-
             var places = searchBox.getPlaces();
 
             var bounds = new google.maps.LatLngBounds();

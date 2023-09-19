@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\BrandAtmosphereImageController;
 use App\Http\Controllers\BrandController;
 use App\Http\Controllers\BrandHeroImageController;
 use App\Models\Area;
@@ -22,9 +23,8 @@ use Intervention\Image\Facades\Image;
 |
 */
 Route::get('/', function () {
-    $brands = Brand::with(['country','areas'])->get();
     $settings = DB::table("site_settings")->get()->first();
-    return view('index',compact('brands','settings'));
+    return view('index', compact('settings'));
 });
 Route::get('/stay-connected', function () {
     return view('stay_connected');
@@ -38,15 +38,13 @@ Route::get('/brands', function () {
     return view('brands', ['brands' => $brands, 'images' => $images]);
 })->name('front-brands.index');
 Route::get('brands/{id}', function (Request $request) {
-    $brand = Brand::where('id', '=', $request->id)->with(['country', 'areas'])->get()->first();
+    $brand = Brand::where('id', '=', $request->id)->with(['country', 'areas', 'images'])->get()->first();
     return view('brands-page', ['brand' => $brand]);
 })->name('single-brand');
 Route::get('brands/{id}/card', function (Request $request) {
     $brand = Brand::where('id', '=', $request->id)->get()->first();
     return view('brands-page-card', ['brand' => $brand]);
 })->name('single-brand-card');
-
-
 Route::view('contact-us/{type}', 'contact_form')->name('contact-us-view');
 Route::post('submit-contact-use', function (Request $request) {
     $content = $request->except(["type", "_token"]);
@@ -57,7 +55,18 @@ Route::post('submit-contact-use', function (Request $request) {
     ]);
     return redirect()->back()->with('message', "Thank you, we will contact you soon !");
 })->name('submit-contact-use');
-
+Route::post('submit-rate-message', function (Request $request) {
+    DB::table("rate_messages")->insert([
+        'r1' => $request->r1,
+        'r2' => $request->r2,
+        'r3' => $request->r3,
+        'name' => $request->name,
+        'email' => $request->email,
+        'birth' => $request->birth,
+        'message' => $request->message,
+    ]);
+    return redirect()->back()->with('message', "Thank you for your feedback");
+})->name('submit-create-rate-messages');
 
 // admin routes
 Route::group(['middleware' => 'web', 'prefix' => 'admin'], function () {
@@ -75,6 +84,7 @@ Route::group(['middleware' => 'web', 'prefix' => 'admin'], function () {
     })->name('admin.settings-admin');
     Route::resource('brands', BrandController::class);
     Route::resource('brand-hero-images', BrandHeroImageController::class);
+    Route::resource('brand-atmosphere-images', BrandAtmosphereImageController::class);
     // Global
     Route::get('contacts', function (Request $request) {
         $messages = DB::table('contact_forms')->orderBy('id', 'desc')->get();
@@ -126,15 +136,19 @@ Route::group(['middleware' => 'web', 'prefix' => 'admin'], function () {
     Route::post('/footer', function (Request $request) {
         $data = $request->except('_token');
 
-        if($request->hasFile('video')){
+        if ($request->hasFile('video')) {
             $file = $request->file('video');
             $filename = Str::random(30) . '.' . $file->getClientOriginalExtension();
-            $path = public_path().'/uploads/';
+            $path = public_path() . '/uploads/';
             $file->move($path, $filename);
             $data["video"] = $filename;
         }
         DB::table("site_settings")->insert($data);
         return redirect()->back();
     })->name('settings-controller');
+    Route::get("/rate-messages", function (Request $request) {
+        $messages = DB::table("rate_messages")->get();
+        return view("admin.rate-messages", ['messages' => $messages]);
+    })->name("admin.rate-messages");
 });
 Auth::routes();

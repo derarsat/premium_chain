@@ -13,7 +13,7 @@ module.exports = {
                 padding:"2rem"
             },
             fontFamily: {
-                sans: "Montserrat",
+                sans: "Gotham",
             },
         },
     },

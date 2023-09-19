@@ -1,15 +1,16 @@
 <div class="relative overflow-x-auto p-4">
     <table class="w-full text-sm text-left text-gray-500">
         <thead class="text-xs text-gray-700 uppercase bg-gray-50">
-            <tr>
-                <th scope="col" class="px-6 py-3">#ID</th>
-                <th scope="col" class="px-6 py-3">Name</th>
-                <th scope="col" class="px-6 py-3">Brabnd</th>
-                <th scope="col" class="px-6 py-3">Actions</th>
-            </tr>
+        <tr>
+            <th scope="col" class="px-6 py-3">#ID</th>
+            <th scope="col" class="px-6 py-3">Name</th>
+            <th scope="col" class="px-6 py-3">Brand</th>
+            <th scope="col" class="px-6 py-3">Country</th>
+            <th scope="col" class="px-6 py-3">Actions</th>
+        </tr>
         </thead>
         <tbody>
-            @foreach ($areas as $area)
+        @foreach ($areas as $area)
             <tr class="bg-white border-b">
                 <th
                     scope="row"
@@ -21,19 +22,29 @@
                     scope="row"
                     class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap"
                 >
+                    {{$area->name}}
+                </th>
+                <th
+                    scope="row"
+                    class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap"
+                >
                     {{$area->brand->name}}
                 </th>
                 <th
                     scope="row"
                     class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap"
                 >
-                    {{$area->name}}
+                    {{$area->country->name}}
                 </th>
                 <td class="px-6 py-4 flex gap-3">
                     <button
                         onclick="handleAreaClick(event)"
                         data-name="{{$area->name}}"
                         data-id="{{$area->id}}"
+                        data-lat="{{$area->lat}}"
+                        data-lng="{{$area->lng}}"
+                        data-brand="{{$area->brand->id}}"
+                        data-country="{{$area->country->id}}"
                         data-modal-target="area-edit-modal"
                         data-modal-toggle="area-edit-modal"
                         class="font-medium text-indigo-600 hover:underline flex gap-1 items-center"
@@ -81,7 +92,7 @@
                     </button>
                 </td>
             </tr>
-            @endforeach
+        @endforeach
         </tbody>
     </table>
 </div>
@@ -128,9 +139,9 @@
                     action="{{ route('area-controller') }}?action=update"
                 >
                     @csrf
-                    <input type="hidden" id="area-id" name="id" />
+                    <input type="hidden" id="area-id" name="id"/>
                     <div>
-                        <label for="name">Area name</label>
+                        <label for="area-name">Area name</label>
                         <input
                             type="text"
                             name="name"
@@ -139,7 +150,45 @@
                             required
                         />
                     </div>
-                    <input type="submit" value="Save area" />
+                    <div>
+                        <label for="lat">Area lat</label>
+                        <input
+                            type="text"
+                            name="lat"
+                            id="area-lat"
+                            required
+                        />
+                    </div>
+                    <div>
+                        <label for="lng">Area lng</label>
+                        <input
+                            type="text"
+                            name="area-lng"
+                            id="lng"
+                            required
+                        />
+                    </div>
+                    <div>
+                        <label for="brand_id">Select brand</label>
+                        <select name="brand_id" id="brand_id">
+                            @foreach ($brands as $brand)
+                                <option value="{{$brand->id}}">
+                                    {{$brand->name}}
+                                </option>
+                            @endforeach
+                        </select>
+                    </div>
+                    <div>
+                        <label for="country_id">Select country</label>
+                        <select id="country_id" name="country_id">
+                            @foreach ($countries as $country)
+                                <option value="{{$country->id}}">
+                                    {{$country->name}}
+                                </option>
+                            @endforeach
+                        </select>
+                    </div>
+                    <input type="submit" value="Save area"/>
                 </form>
             </div>
         </div>
@@ -192,19 +241,19 @@
                 </svg>
                 <h3 class="mb-5 font-normal text-gray-500">
                     Are you sure you want to delete this area?
-                    <br />
+                    <br/>
                     This will delete all of it's related areas and brands
                 </h3>
 
                 <form method="post" class="inline-block" action="{{ route('area-controller') }}?action=delete">
                     <input type="hidden" name="id" id="delete-area-id">
                     <button
-                    data-modal-hide="area-delete-modal"
-                    class="text-white bg-red-600  font-medium rounded-lg text-sm inline-flex items-center px-4 py-2 text-center mr-2"
-                >
-                    Yes, I'm sure
-                </button>
-                @csrf
+                        data-modal-hide="area-delete-modal"
+                        class="text-white bg-red-600  font-medium rounded-lg text-sm inline-flex items-center px-4 py-2 text-center mr-2"
+                    >
+                        Yes, I'm sure
+                    </button>
+                    @csrf
                 </form>
 
                 <button
@@ -220,17 +269,33 @@
 </div>
 
 <script>
-    function handleAreaClick() {
-        var inputId = document.getElementById("area-id");
-        var inputName = document.getElementById("area-name");
-        var name = event.target.getAttribute("data-name");
-        var id = event.target.getAttribute("data-id");
-        inputId.value = id;
-        inputName.value = name;
+    function handleAreaClick(event) {
+
+        setTimeout(()=>{
+            let inputId = document.getElementById("area-id");
+            let inputName = document.getElementById("area-name");
+            let countryId = document.getElementById("country_id");
+            let brandId = document.getElementById("brand_id");
+            let inputLat = document.getElementById("area-lat");
+            let inputLng = document.getElementById("area-lng");
+            let name = event.target.getAttribute("data-name");
+            let id = event.target.getAttribute("data-id");
+            let country = event.target.getAttribute("data-country");
+            let brand = event.target.getAttribute("data-brand");
+            let lat = event.target.getAttribute("data-lat");
+            let lng = event.target.getAttribute("data-lng");
+            inputLng.value = lng;
+            inputLat.value = lat;
+            countryId.value = country;
+            brandId.value = brand;
+            inputId.value = id;
+            inputName.value = name;
+        },1000)
     }
+
     function handleAreaDelete() {
-        var inputId = document.getElementById("delete-area-id");
-        var id = event.target.getAttribute("data-id");
+        let inputId = document.getElementById("delete-area-id");
+        let id = event.target.getAttribute("data-id");
         inputId.value = id;
     }
 </script>
