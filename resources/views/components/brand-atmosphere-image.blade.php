@@ -48,7 +48,9 @@
                     <img class="w-32" src="{{ @App::make('url')->to('/') . '/storage' . $image->image}}" alt="">
 
                 </th>
-
+                <td>
+                    {{$image->title}}
+                </td>
                 <td>
                     {{$image->brand->name}}
                 </td>
