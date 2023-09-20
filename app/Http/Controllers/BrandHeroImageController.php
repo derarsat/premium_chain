@@ -14,6 +14,7 @@ class BrandHeroImageController extends Controller
     {
         $validated = $request->validate([
             'url' => 'required|image',
+            'title' => 'required|string',
         ]);
         $files = ['url'];
         $hero_image = new BrandHeroImage();
@@ -27,7 +28,7 @@ class BrandHeroImageController extends Controller
                 $hero_image->$file_name = $imageUrl;
             }
         }
-
+        $hero_image->title = $validated["title"];
         $hero_image->save();
         return redirect()->back();
     }
@@ -35,7 +36,7 @@ class BrandHeroImageController extends Controller
 
     public function destroy(Request $request)
     {
-        $image = BrandHeroImage::where('id','=',$request->id);
+        $image = BrandHeroImage::where('id', '=', $request->id);
         $image->delete();
         return redirect()->back();
     }

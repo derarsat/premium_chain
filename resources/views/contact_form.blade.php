@@ -3,7 +3,7 @@
 @section('title','Contact us')
 
 @section('content')
-    <div class="py-44">
+    <div class="py-12 lg:py-44">
         <div class="max-w-5xl mx-auto px-4 lg:px-0">
             @if(session()->has('message'))
                 <p class="bg-green-500 text-white p-4 mb-6 rounded-md text-center"> {{ session()->get('message') }}</p>

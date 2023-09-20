@@ -1,7 +1,6 @@
 @extends('layouts.admin')
 
 @section('content')
-    {{$errors}}
     <div class="rounded p-6 bg-gray-50">
         <div class="bg-gray-100 rounded p-6">
             <h1 class="py-4 font-light text-2xl text-gray-700">Footer settings</h1>

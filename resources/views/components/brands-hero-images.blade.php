@@ -6,6 +6,10 @@
             <label for="url">Hero image</label>
             <input id="url" name="url" type="file">
         </div>
+        <div class="mt-3">
+            <label for="title">Title</label>
+            <input id="title" name="title" type="text" required>
+        </div>
         <input type="submit" value="Save Hero Image">
     </form>
 </div>
@@ -16,6 +20,7 @@
         <tr>
             <th scope="col" class="px-6 py-3">#ID</th>
             <th scope="col" class="px-6 py-3">Image</th>
+            <th scope="col" class="px-6 py-3">Title</th>
             <th scope="col" class="px-6 py-3">Actions</th>
         </tr>
         </thead>
@@ -35,6 +40,9 @@
                     <img class="w-32" src="{{ @App::make('url')->to('/') . '/storage' . $hero_image->url}}" alt="">
 
                 </th>
+                <td>
+                    {{$hero_image->title}}
+                </td>
                 <td class="px-6 py-4 flex gap-3">
                     <form method="post" class="inline-block"
                           action="{{ route('brand-hero-images.destroy',$hero_image->id) }}"

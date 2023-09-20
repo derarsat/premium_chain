@@ -33,7 +33,7 @@
         </div>
 
         <input type="text" id="pac-input" style="position: absolute;top: 2.5%;left: 2.5%;width: 95% !important;">
-        <div id="map" class="col-span-3 aspect-[3/1]">
+        <div id="map" class="col-span-3 aspect-[3/2] lg:aspect-[3/1]">
 
         </div>
     </div>

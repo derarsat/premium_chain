@@ -124,7 +124,7 @@ class BrandController extends Controller
      */
     public function edit(Request $request)
     {
-        echo "derar";
+
     }
 
     /**
@@ -136,7 +136,32 @@ class BrandController extends Controller
      */
     public function update(Request $request, Brand $brand)
     {
-        //
+        $validated = $request->validate([
+            'name' => 'required|max:255',
+            'description' => 'required',
+            'selling_point_description' => 'required',
+            'menu_description' => 'required',
+            'color' => 'required',
+        ]);
+        $brand->name = $validated["name"];
+        $brand->color = $validated["color"];
+        $brand->description = $validated["description"];
+        $brand->selling_point_description = $validated["selling_point_description"];
+        $brand->menu_description = $validated["menu_description"];
+
+        $files = ['logo', 'footer_image', 'page_logo', 'page_background', 'selling_point_image', 'menu_image', 'hero_image', 'rating_icon'];
+        for ($i = 0; $i < count($files); $i++) {
+            $file_name = $files[$i];
+            // Logo
+            if ($request->file($file_name)) {
+                $imageFile = $request->file($file_name);
+                $imagePath = $file_name . '/';
+                $imageUrl = $this->imageUploader($imageFile, $imagePath);
+                $brand->$file_name = $imageUrl;
+            }
+        }
+        $brand->save();
+        return redirect()->back();
     }
 
     /**
@@ -147,6 +172,7 @@ class BrandController extends Controller
      */
     public function destroy(Brand $brand)
     {
-        //
+        $brand->delete();
+        return redirect()->back();
     }
 }

@@ -36,7 +36,7 @@ class BrandAtmosphereImageController extends Controller
 
     public function destroy(Request $request)
     {
-        $image = BrandAtmosphereImage::where('id','=',$request->id);
+        $image = BrandAtmosphereImage::where('id', '=', $request->id);
         $image->delete();
         return redirect()->back();
     }

@@ -5,70 +5,46 @@
     <script
         src="https://maps.googleapis.com/maps/api/js?key={{env('MAP_KEY')}}&callback=initMaps"
         defer></script>
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+    <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
 
-    <div class="relative">
-        <img src="{{ @App::make('url')->to('/') . '/storage' . $brand->hero_image}}" alt="{{$brand->name}}">
+    <div class="relative ">
+        <div class="min-h-[120vh]"
+             style="background: url({{ @App::make('url')->to('/') . '/storage' . $brand->hero_image}})">
+
+        </div>
         <div
             class="absolute bg-gradient-to-t from-[rgba(250,250,250,1)] to-transparent via-[rgba(0,0,0,0.4)] inset-0 text-white text-center flex items-center justify-center flex-col z-10">
-            <div class="max-w-4xl px-4 lg:px-0 flex flex-col gap-8">
-                <img class="w-96 mx-auto" src="{{ @App::make('url')->to('/') . '/storage' . $brand->logo}}"
-                     alt="{{$brand->name}}">
-                <h4 class="font-light">{{$brand->description}}</h4>
+            <div class="max-w-4xl px-4 lg:px-0 flex flex-col gap-8 ">
+                @if($brand->logo)
+                    <img class=" w-64 lg:w-96 mx-auto" src="{{ @App::make('url')->to('/') . '/storage' . $brand->logo}}"
+                         alt="{{$brand->name}}">
+                @endif
+                <h4 class="font-light stroke-text">{{$brand->description}}</h4>
             </div>
         </div>
     </div>
-    <div class="max-w-4xl text-center mx-auto py-24">
-        <h1 class="text-3xl lg:text-5xl font-light uppercase text-center mb-6">Brand <span
+    <div class="max-w-4xl px-4 lg:px-0 text-center mx-auto py-12 lg:py-24">
+        <h1 class="text-4xl lg:text-5xl font-light uppercase text-center mb-6">Brand <span
                 class="font-black">Atmosphere</span></h1>
         <p>Signature Hospitality travels the world with operations in 8 diverse countries. Headquartered in Riyadh, our
             consultancy and management agency boasts 25 years of experience as the forefront of our work.</p>
+        <div class="carousel mt-12 w-full">
+            @foreach ($brand->images as $image)
 
-
-        <!-- Slider main container -->
-        <div class="swiper">
-            <!-- Additional required wrapper -->
-            <div class="swiper-wrapper">
-                <!-- Slides -->
-                @foreach ($brand->images as $image )
-                    <div class="swiper-slide">
-                       <div class="with-shadow">
-                           <img src="{{ @App::make('url')->to('/') . '/storage' . $image->image}}" alt="{{$brand->name}}">
-
-                       </div>
-                    </div>
-                @endforeach
-            </div>
-
-            <div class="swiper-button-prev"></div>
-            <div class="swiper-button-next"></div>
+                <img src="{{ @App::make('url')->to('/') . '/storage' . $image->image}}" alt="">
+            @endforeach
         </div>
-
-
     </div>
-
-
-
     <script>
-        const swiper = new Swiper('.swiper', {
-            observer: true,
-            observeParents: true,
-            spaceBetween: 0,
-            slidesPerView: 1,
-            navigation,
-
-            speed: 100,
-            loop: true,
-            autoplay: {
-                delay: 2500,
-            }
-        })
-
+        $(document).ready(function () {
+            $('.carousel').slick({});
+        });
     </script>
-
-
     <div class="container">
-        <div class="max-w-4xl text-center mx-auto py-24">
-            <h1 class="text-3xl lg:text-5xl font-light uppercase text-center mb-6">Our <span
+        <div class="max-w-4xl text-center mx-auto py-12 lg:py-24">
+            <h1 class="text-4xl lg:text-5xl font-light uppercase text-center mb-6">Our <span
                     class="font-black">Locations</span></h1>
             <p>With the help of Premium Chain, our clients have turned a new page on their businesses to find success in
                 various corners of the world. </p>
@@ -92,25 +68,27 @@
         </div>
         <div id="tab">
             @foreach($brand->areas as $area)
-                <div class="hidden p-4 rounded-lg bg-gray-50" id="{{str_replace(" ","-",$area->name)}}" role="tabpanel"
+                <div class="hidden rounded-lg bg-gray-50" id="{{str_replace(" ","-",$area->name)}}" role="tabpanel"
                      aria-labelledby="{{str_replace(" ","-",$area->name)}}-tab">
                     <div id="{{str_replace(" ","-",$area->name)}}-map" data-lat="{{$area->lat}}"
                          data-lng="{{$area->lng}}"
-                         class="map col-span-3 aspect-[3/1]"></div>
+                         class="map col-span-3 aspect-[3/2] lg:aspect-[3/1]"></div>
                 </div>
             @endforeach
         </div>
     </div>
 
 
-    <div class="py-44 max-w-7xl text-center mx-auto px-4 lg:px-0">
+    <div class="py-12 lg:py-24 max-w-7xl text-center mx-auto px-4 lg:px-0">
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-24 ">
-            <div class="relative with-shadow">
-                <img class="w-full " src="{{ @App::make('url')->to('/') . '/storage' . $brand->selling_point_image}}"
-                     alt="GIVING BACK TO THE COMMUNITY">
+            <div class="relative with-shadow ">
+                <div class="min-h-[50vh]"
+                     style="background: url({{ @App::make('url')->to('/') . '/storage' . $brand->selling_point_image}})">
+
+                </div>
             </div>
             <p class="text-left">
-               {{$brand->selling_point_description}}
+                {{$brand->selling_point_description}}
             </p>
         </div>
     </div>

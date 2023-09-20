@@ -64,7 +64,7 @@
         @endif
         <form action="{{route('submit-create-rate-messages')}}" method="post">
             @csrf
-            <div class="grid grid-cols-4 gap-8 items-center justify-end py-24 text-center">
+            <div class="grid grid-cols-4 gap-8 items-center justify-end py-12 lg:py-24 text-center">
                 <h1 class="text-2xl font-light text-left">Rating</h1>
                 <span>Average</span>
                 <span>Good</span>

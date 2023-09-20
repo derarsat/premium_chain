@@ -1,13 +1,12 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-@import "swiper/swiper-bundle.css";
-
 @font-face {
     font-family: "Gotham";
     font-weight: 900;
     src: url("./fonts/Gotham-Black.otf");
 }
+
 @font-face {
     font-family: "Gotham";
     font-weight: 700;
@@ -19,6 +18,7 @@
     font-weight: 500;
     src: url("./fonts/Gotham-Medium.otf");
 }
+
 @font-face {
     font-family: "Gotham";
     font-weight: 400;
@@ -32,8 +32,7 @@
 }
 
 
-
-input[type="text"], input[type="url"], input[type="email"],input[type="color"],input[type="date"], select, textarea {
+input[type="text"], input[type="url"], input[type="email"], input[type="color"], input[type="date"], select, textarea {
     @apply bg-gray-50 border text-sm border-gray-300 text-gray-900 rounded-lg focus:ring-indigo-500 focus:border-indigo-500 block w-full p-2.5;
 }
 
@@ -54,9 +53,11 @@ body {
     width: 100vw;
     overflow-x: hidden;
 }
-.with-shadow{
+
+.with-shadow {
     @apply relative
 }
+
 .with-shadow::after {
     /*@apply absolute w-8/12 aspect-video bg-slate-500 -bottom-[15%] -right-[15%] ;*/
     /*z-index: -1;*/
@@ -64,24 +65,122 @@ body {
 }
 
 
-td{
+td {
     @apply px-6 py-4
 }
 
-th{
+th {
     @apply px-6 py-4 font-black text-gray-900 whitespace-nowrap
 }
-tr{
+
+tr {
     @apply bg-white border-b
 }
-thead{
+
+thead {
     @apply text-xs text-gray-700 uppercase bg-gray-50
 }
 
 table {
     @apply w-full text-sm text-left text-gray-500
 }
-.container{
-    padding-left:  1rem !important;
-    padding-right:  1rem !important;
+
+.container {
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+}
+
+* {
+    background-position: center !important;
+    background-size: cover !important;
+    background-repeat: no-repeat !important;
+}
+
+.stroke-text {
+    text-stroke: 2px red;
+}
+
+/* Slider */
+.slick-loading .slick-list {
+    background: #fff url('https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/ajax-loader.gif') center center no-repeat;
+}
+
+/* Icons */
+@font-face {
+    font-family: 'slick';
+    font-weight: normal;
+    font-style: normal;
+    src: url('https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/fonts/slick.eot');
+    src: url('https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/fonts/slick.eot') format('embedded-opentype'), url('https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/fonts/slick.woff ') format('woff'), url('https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/fonts/slick.ttf') format('truetype'), url('https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/fonts/slick.svg') format('svg');
+}
+
+/* Arrows */
+.slick-prev,
+.slick-next {
+    z-index: 10 !important;
+    font-size: 0;
+    line-height: 0;
+    position: absolute;
+    top: 50%;
+    display: block;
+    width: 20px;
+    height: 20px;
+    margin-top: -10px;
+    padding: 0;
+    cursor: pointer;
+    color: transparent;
+    border: none;
+    outline: none;
+    background: transparent;
+}
+
+.slick-prev:hover,
+.slick-prev:focus,
+.slick-next:hover,
+.slick-next:focus {
+    color: transparent;
+    outline: none;
+    background: transparent;
+}
+
+.slick-prev:hover:before,
+.slick-prev:focus:before,
+.slick-next:hover:before,
+.slick-next:focus:before {
+    opacity: 1;
+}
+
+.slick-prev.slick-disabled:before,
+.slick-next.slick-disabled:before {
+    opacity: .25;
+}
+
+.slick-prev:before,
+.slick-next:before {
+    font-size: 30px;
+    color: #536972;
+    font-weight: bold;
+    z-index: 10;
+
+}
+
+.slick-prev {
+    left: -40px;
+}
+
+.slick-prev:before {
+    content: '←';
+}
+
+.slick-next {
+    right: -30px;
+}
+
+.slick-next:before {
+    content: '→';
+}
+
+
+select {
+    background-image: unset !important;
 }

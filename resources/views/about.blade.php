@@ -9,7 +9,7 @@
            <div
                class="absolute bg-gradient-to-t from-[rgba(250,250,250,1)] to-transparent via-[rgba(0,0,0,0.4)] inset-0 text-white text-center flex items-center justify-center flex-col z-10">
                <div class="max-w-4xl px-4 lg:px-0 flex flex-col gap-8">
-                   <h1 class="text-3xl lg:text-5xl font-bold">“TRUE HOSPITALITY CONSISTS
+                   <h1 class="text-4xl lg:text-5xl font-bold">“TRUE HOSPITALITY CONSISTS
                        OF GIVING THE BEST OF
                        YOURSELF TO YOUR GUESTS.” </h1>
                    <h4 class="font-medium">– ELEANOR ROOSEVELT</h4>
@@ -19,7 +19,7 @@
        <div style="background-image: url({{asset('/bg-about.webp')}})" class="bg-no-repeat">
            <div class="px-4 lg:px-0 max-w-7xl mx-auto">
                <div class=" w-full lg:w-6/12 flex justify-end gap-6 flex-col ml-auto">
-                   <h1 class="text-4xl lg:text-5xl uppercase ">
+                   <h1 class="text-4xl lg:text-5xl uppercase  text-center lg:text-left">
                        <span class="font-normal">Taking hospitality</span> <br>
                        <span class="font-bold">to new heights</span>
                    </h1>
@@ -84,7 +84,7 @@
        <!--  -->
        <!--  -->
        <div class=" max-w-7xl text-center mx-auto px-4 lg:px-0 grid grid-cols-1 gap-8">
-           <h1 class="text-3xl lg:text-5xl lg:text-5xl uppercase ">
+           <h1 class="text-4xl lg:text-5xl lg:text-5xl uppercase ">
                <span class="font-normal">Hospitality </span>
                <span class="font-black">consultancy</span>
            </h1>
@@ -100,20 +100,16 @@
                from the hospitality industry, including chefs, managers, and marketers, who work closely with clients to
                create tailor-made solutions that address their specific needs.
            </p>
-           <div class="relative w-full with-shadow">
-               <img class="w-full" src="{{asset('hospitality-consultancy.webp')}}"
-                    alt="Hospitality Consultancy">
+           <div class="relative w-full with-shadow min-h-[50vh]" style="background: url({{asset('hospitality-consultancy.webp')}})">
            </div>
        </div>
-       <div class="max-w-7xl text-center mx-auto px-4 lg:px-0 grid grid-cols-1 gap-8 mb-12">
-           <h1 class="text-3xl lg:text-5xl uppercase">
+       <div class="max-w-7xl text-center mx-auto px-4 lg:px-0 grid grid-cols-1 gap-8 mb-12\">
+           <h1 class="text-4xl lg:text-5xl uppercase">
                <span class="font-normal">GIVING BACK  </span>
                <span class="font-black">TO THE COMMUNITY</span>
            </h1>
-           <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-24 ">
-               <div class="relative with-shadow">
-                   <img class="w-full " src="{{asset('giving-back-to-the-community.webp')}}"
-                        alt="GIVING BACK TO THE COMMUNITY">
+           <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-24 pb-12 ">
+               <div class="relative with-shadow min-h-[50vh]" style="background:url({{asset('giving-back-to-the-community.webp')}})">
                </div>
                <p class="text-left">
                    Premium hospitality has realized the importance of engaging in social responsibility activities as a

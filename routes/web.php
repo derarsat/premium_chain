@@ -82,6 +82,10 @@ Route::group(['middleware' => 'web', 'prefix' => 'admin'], function () {
         }
         return view('admin.settings-admin', ['data' => $data]);
     })->name('admin.settings-admin');
+    Route::get("/edit-brand/{id}", function (Request $request) {
+        $brand = Brand::find($request->id);
+        return view('admin.edit-brand', ['brand' => $brand]);
+    })->name('admin.edit-brand');
     Route::resource('brands', BrandController::class);
     Route::resource('brand-hero-images', BrandHeroImageController::class);
     Route::resource('brand-atmosphere-images', BrandAtmosphereImageController::class);

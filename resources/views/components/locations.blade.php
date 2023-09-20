@@ -5,7 +5,7 @@
         defer></script>
     <div class="container">
         <div class="grid grid-cols-1 gap-6">
-            <h1 class="text-3xl lg:text-5xl text-center uppercase">
+            <h1 class="text-4xl lg:text-5xl text-center uppercase">
                 <span class="font-light">an</span>
                 <span class="font-black">international range </span>
             </h1>
