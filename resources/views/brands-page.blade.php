@@ -78,7 +78,6 @@
         </div>
     </div>
 
-
     <div class="py-12 lg:py-24 max-w-7xl text-center mx-auto px-4 lg:px-0">
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-24 ">
             <div class="relative with-shadow ">
@@ -92,6 +91,37 @@
             </p>
         </div>
     </div>
+    <div class="max-w-7xl px-4 lg:px-0 mx-auto py-12 lg:py-24 grid grid-cols-1 gap-8">
+        <h1 class="text-center text-4xl lg:text-5xl">
+            MENU & <span class="font-black">OFFERINGS</span>
+
+        </h1>
+        <div class="relative with-shadow ">
+            <div class="min-h-[60vh]"
+                 style="background: url({{ @App::make('url')->to('/') . '/storage' . $brand->menu_image}})">
+
+            </div>
+        </div>
+        <p class="text-left">
+            {{$brand->menu_description}}
+        </p>
+    </div>
+    <div class="relative min-h-[100vh]"
+         style="background: url({{ @App::make('url')->to('/') . '/storage' . $brand->footer_image}});">
+        <div
+            class="absolute bg-gradient-to-t from-[rgba(0,0,0,1)] to-transparent via-[rgba(0,0,0,0.4)] inset-0 text-white text-center flex items-center justify-center flex-col z-10">
+            <div class="max-w-4xl px-4 lg:px-0 flex flex-col gap-8">
+                <h1 class="text-4xl lg:text-5xl  uppercase">We value <span class="font-black"> your opinion</span></h1>
+                <h4 class="font-light">Signature Hospitality can provide businesses with the following services to grow and find success.  </h4>
+                <div class="flex justify-center">
+                    <a href="{{route('single-brand-card',$brand->id)}}"
+                       class="bg-[#DCDAD4] text-black px-8 py-3 uppercase font-medium text-xl">Rate your experience</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
     <script>
         function initMaps() {
             const mapsWrap = document.querySelectorAll(".map");
