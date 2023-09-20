@@ -27,7 +27,6 @@
         <tr>
             <th scope="col" class="px-6 py-3">#ID</th>
             <th scope="col" class="px-6 py-3">Image</th>
-            <th scope="col" class="px-6 py-3">Title</th>
             <th scope="col" class="px-6 py-3">Brand</th>
             <th scope="col" class="px-6 py-3">Actions</th>
         </tr>
@@ -48,9 +47,6 @@
                     <img class="w-32" src="{{ @App::make('url')->to('/') . '/storage' . $image->image}}" alt="">
 
                 </th>
-                <td>
-                    {{$image->title}}
-                </td>
                 <td>
                     {{$image->brand->name}}
                 </td>
