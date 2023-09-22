@@ -17,16 +17,18 @@
                     <a href="{{route('single-brand',$brand->id)}}">{{$brand->name}}</a>
                 @endforeach
             </div>
-            <div class="flex-col flex gap-4">
-                <a href="{{route('stay-connected')}}">Get in touch</a>
-                <a href="tel:{{$data['settings']->phone}}">{{$data['settings']->phone}}</a>
-                <a href="mailto:{{$data['settings']->email}}">{{$data['settings']->email}}</a>
-                <div class="flex items-center gap-4">
-                    <a href="{{$data['settings']->facebook}}"><img src="{{asset('ic_facebook.png')}}" alt=""></a>
-                    <a href="{{$data['settings']->instagram}}"><img src="{{asset('ic_insta.png')}}" alt=""></a>
-                    <a href="{{$data['settings']->linkedin}}"><img src="{{asset('ic_linkedin.png')}}" alt=""></a>
+            @if($data['settings'])
+                <div class="flex-col flex gap-4">
+                    <a href="{{route('stay-connected')}}">Get in touch</a>
+                    <a href="tel:{{$data['settings']->phone}}">{{$data['settings']->phone}}</a>
+                    <a href="mailto:{{$data['settings']->email}}">{{$data['settings']->email}}</a>
+                    <div class="flex items-center gap-4">
+                        <a href="{{$data['settings']->facebook}}"><img src="{{asset('ic_facebook.png')}}" alt=""></a>
+                        <a href="{{$data['settings']->instagram}}"><img src="{{asset('ic_insta.png')}}" alt=""></a>
+                        <a href="{{$data['settings']->linkedin}}"><img src="{{asset('ic_linkedin.png')}}" alt=""></a>
+                    </div>
                 </div>
-            </div>
+            @endif
         </div>
     </div>
 </div>

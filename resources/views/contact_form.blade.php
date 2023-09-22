@@ -8,7 +8,7 @@
             @if(session()->has('message'))
                 <p class="bg-green-500 text-white p-4 mb-6 rounded-md text-center"> {{ session()->get('message') }}</p>
             @endif
-            <h1 class="text-2xl font-black uppercase">
+            <h1 class="text-2xl font-bold uppercase">
                 @if(request()->type === 'carriers')
                     Join Our Team and grow your  career with us
                 @endif

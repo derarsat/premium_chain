@@ -16,8 +16,8 @@
                </div>
            </div>
        </div>
-       <div style="background-image: url({{asset('/bg-about.webp')}})" class="bg-no-repeat">
-           <div class="px-4 lg:px-0 max-w-7xl mx-auto">
+       <div  class="bg-no-repeat">
+           <div style="background-image: url({{asset('/tr-bg.png')}})" class="px-4 py-24 lg:px-0 max-w-7xl mx-auto">
                <div class=" w-full lg:w-6/12 flex justify-end gap-6 flex-col ml-auto">
                    <h1 class="text-4xl lg:text-5xl uppercase  text-center lg:text-left">
                        <span class="font-normal">Taking hospitality</span> <br>

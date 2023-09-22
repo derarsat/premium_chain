@@ -5,7 +5,7 @@
             role="tablist">
             <li class="mr-2" role="presentation">
                 <button class="inline-block p-4 border-b-2 rounded-t-lg" id="carriers-tab" data-tabs-target="#carriers"
-                        type="button" role="tab" aria-controls="carriers" aria-selected="false">Carriers
+                        type="button" role="tab" aria-controls="carriers" aria-selected="false">Careers
                 </button>
             </li>
             <li class="mr-2" role="presentation">

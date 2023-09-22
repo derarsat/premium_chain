@@ -18,7 +18,7 @@
                     {{$brand->id}}
                 </th>
                 <th>
-                    <img class="w-24" src="{{ @App::make('url')->to('/') . '/storage' . $brand->page_logo}}" alt="">
+                    <img class="w-24" src="{{ @App::make('url')->to('/') . '/storage' . $brand->colored_logo}}" alt="">
                 </th>
                 <th
                     scope="row"

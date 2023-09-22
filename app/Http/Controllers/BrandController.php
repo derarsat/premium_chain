@@ -67,7 +67,7 @@ class BrandController extends Controller
                 $brand->selling_point_description = $validated["selling_point_description"];
                 $brand->menu_description = $validated["menu_description"];
 
-                $files = ['logo', 'footer_image', 'page_logo', 'page_background', 'selling_point_image', 'menu_image', 'hero_image', 'rating_icon'];
+                $files = ['dark_logo', 'footer_image', 'light_logo', '', 'colored_logo', 'page_background', 'selling_point_image', 'menu_image', 'hero_image', 'rating_icon'];
                 for ($i = 0; $i < count($files); $i++) {
                     $file_name = $files[$i];
                     // Logo
@@ -149,7 +149,7 @@ class BrandController extends Controller
         $brand->selling_point_description = $validated["selling_point_description"];
         $brand->menu_description = $validated["menu_description"];
 
-        $files = ['logo', 'footer_image', 'page_logo', 'page_background', 'selling_point_image', 'menu_image', 'hero_image', 'rating_icon'];
+        $files = ['dark_logo', 'footer_image', 'light_logo', '', 'colored_logo', 'page_background', 'selling_point_image', 'menu_image', 'hero_image', 'rating_icon'];
         for ($i = 0; $i < count($files); $i++) {
             $file_name = $files[$i];
             // Logo

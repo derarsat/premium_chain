@@ -13,7 +13,7 @@
                 class="px-4 lg:px-0 text-white bg-gradient-to-t from-[rgba(250,250,250,1)] to-transparent via-[rgba(0,0,0,0.4)] absolute inset-0 flex items-center justify-center flex-col gap-4">
                 <h1 class="text-4xl lg:text-5xl flex-col flex text-center">
                     <span class="font-light">EVERY CHALLENGE</span>
-                    <span class="font-black">HAS A SOLUTION</span>
+                    <span class="font-bold">HAS A SOLUTION</span>
                 </h1>
                 <p class="max-w-4xl mx-auto text-center">
                     Signature Hospitality brings change and success to the forefront of a brand or business.
@@ -34,7 +34,7 @@
                 class="px-4 lg:px-0 text-white bg-black absolute inset-0 flex items-center justify-center flex-col gap-4">
                 <h1 class="text-4xl lg:text-5xl flex-col flex text-center">
                     <span class="font-light">EVERY CHALLENGE</span>
-                    <span class="font-black">HAS A SOLUTION</span>
+                    <span class="font-bold">HAS A SOLUTION</span>
                 </h1>
                 <p class="max-w-4xl mx-auto text-center">
                     Signature Hospitality brings change and success to the forefront of a brand or business.
@@ -47,7 +47,7 @@
         <div class="max-w-5xl px-4 lg:px-0 mx-auto grid grid-cols-1 gap-4">
             <h1 class="text-4xl lg:text-5xl flex-col flex text-center">
                 <span class="font-light">THE CENTER OF</span>
-                <span class="font-black">OUR HOSPITALITY </span>
+                <span class="font-bold">OUR HOSPITALITY </span>
             </h1>
             <p class="text-center mt-2">
                 Premium Chain travels the world with operations in 8 diverse countries.
@@ -65,16 +65,15 @@
                 <button class="bg-[#DCDAD4] text-black px-4 overflow-hidden py-2 rounded-md mt-2">Read More</button>
             </div>
         </div>
-        <div class="max-w-full w-[80rem] px-4 lg:px-0 mx-auto" >
-            <div class="min-h-[50vh]" style="background: url({{asset("/skyline.webp")}})">
-
+        <div class="max-w-full w-[80rem] px-4 lg:px-0 mx-auto">
+            <div class="min-h-[350px] with-shadow" style="background: url({{asset("/skyline.webp")}})">
             </div>
         </div>
         <x-locations/>
         <div class="max-w-5xl px-4 lg:px-0  mx-auto">
             <h1 class="text-4xl lg:text-5xl text-center uppercase">
                 <span class="font-light">our</span>
-                <span class="font-black">Divisions </span>
+                <span class="font-bold">Divisions </span>
             </h1>
             <p class="text-center mt-2">Premium Chain can provide businesses with the following services to grow and
                 find
@@ -89,13 +88,13 @@
             <div
                 class="absolute bg-gradient-to-t from-[rgba(0,0,0,1)] to-transparent via-[rgba(0,0,0,0.4)] inset-0 text-white text-center flex items-center justify-center flex-col z-10">
                 <div class="max-w-4xl px-4 lg:px-0 flex flex-col gap-8">
-                    <h1 class="text-4xl lg:text-5xl font-black uppercase">Join Our Team</h1>
+                    <h1 class="text-4xl lg:text-5xl font-bold uppercase"><span class="font-light">Join</span> Our Team
+                    </h1>
                     <h4 class="font-light">If you have the passion, drive, and devotion to hospitality and success as we
                         do, then join the team and become a valuable addition to the Premium Chain family. </h4>
                     <div class="flex justify-center">
                         <a href="{{route('contact-us-view','carriers')}}"
-                           class="bg-[#DCDAD4] text-black px-4 py-2 rounded-md">Stay connected</a>
-
+                           class="bg-[#DCDAD4] text-black px-4 py-2 rounded-md">Get in touch</a>
                     </div>
 
                 </div>

@@ -7,7 +7,7 @@
         <div class="grid grid-cols-1 gap-6">
             <h1 class="text-4xl lg:text-5xl text-center uppercase">
                 <span class="font-light">an</span>
-                <span class="font-black">international range </span>
+                <span class="font-bold">international range </span>
             </h1>
             <p class="text-center">
                 With the help of Premium Chain, our clients have turned a new page on their businesses to find

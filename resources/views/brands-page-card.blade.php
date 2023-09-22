@@ -57,7 +57,7 @@
 <div class="absolute top-0 left-0 w-screen flex justify-center px-6 lg:px-24"
      style="background: url({{ @App::make('url')->to('/') . '/storage' . $brand->page_background}})">
     <div class="w-[1024px] p-6 lg:p-24 bg-white flex flex-col gap-8 " style="color: {{$brand->color}}">
-        <img class="w-32 mx-auto" src="{{ @App::make('url')->to('/') . '/storage' . $brand->page_logo}}" alt="">
+        <img class="w-32 mx-auto" src="{{ @App::make('url')->to('/') . '/storage' . $brand->colored_logo}}" alt="">
         <h2 class="font-light text-center text-3xl">We value your feedback</h2>
         @if(session()->has('message'))
             <p class="bg-green-500 text-white p-4 mb-6 rounded-md text-center"> {{ session()->get('message') }}</p>
@@ -104,8 +104,8 @@
         </form>
 
         <div class="flex items-center flex-col justify-center gap-1">
-            <h1 class="font-black text-3xl">Thank You</h1>
-            <p class="font-black">For Your Feedback</p>
+            <h1 class="font-light text-3xl">Thank You</h1>
+            <p class="font-bold">For Your Feedback</p>
         </div>
     </div>
 </div>
