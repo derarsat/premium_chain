@@ -1377,6 +1377,9 @@ input:checked + .toggle-bg {
 .gap-2 {
   gap: 0.5rem;
 }
+.gap-24 {
+  gap: 6rem;
+}
 .gap-3 {
   gap: 0.75rem;
 }
@@ -1388,9 +1391,6 @@ input:checked + .toggle-bg {
 }
 .gap-8 {
   gap: 2rem;
-}
-.gap-24 {
-  gap: 6rem;
 }
 .space-x-2 > :not([hidden]) ~ :not([hidden]) {
   --tw-space-x-reverse: 0;
@@ -1955,7 +1955,7 @@ body {
     overflow-x: clip;
 }
 
-.with-shadow,.with-shadow-2 {
+.with-shadow {
   position: relative;
 }
 td {
