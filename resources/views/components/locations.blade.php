@@ -348,7 +348,9 @@
             let map = mapsWrap[i]
             let mapId = map.getAttribute("id").replaceAll(" ", "-");
             let data = JSON.parse(map.getAttribute("data-areas"))
-
+            if (!data[0]) {
+                return
+            }
             let m = new google.maps.Map(document.getElementById(mapId), {
                 zoom: 10,
                 center: {lat: Number(data[0].lat), lng: Number(data[0].lng)}
