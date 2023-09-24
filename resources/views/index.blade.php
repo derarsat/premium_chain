@@ -1,7 +1,7 @@
 @extends('layouts.front')
 @section('title','Home')
 @section('content')
-    <script src="http://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
     <main class="grid grid-cols-1 gap-12 lg:gap-24">
         <div class="relative hidden lg:block">
             <div class="hidden lg:block">
