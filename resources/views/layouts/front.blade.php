@@ -14,22 +14,14 @@
 
 <body class="relative">
 <style>
-    .with-shadow::after {
+    .with-shadow::after,.with-shadow-2::after {
         background-image: url({{asset('shape.webp')}});
         background-size: cover;
     }
-
-    #header {
-        mix-blend-mode: lighten;
-        backdrop-filter: blur(10px);
-        -webkit-backdrop-filter: blur(10px);
-        -moz-backdrop-filter: blur(10px);
-        -ms-backdrop-filter: blur(10px);
-    }
 </style>
-<header class="lg:fixed hidden lg:block w-screen top-0 z-30 bg-black bg-opacity-20 " id="header"
+<header class="hidden lg:block w-screen top-0 z-30 bg-black  " id="header"
 >
-    <div class="container py-4">
+    <div class="p-4">
         <a href="/">
             <img class="w-44 mx-auto mb-4" src="{{asset('/premium-chain.png')}}" alt="Premium Chain">
         </a>

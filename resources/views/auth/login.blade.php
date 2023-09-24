@@ -1,7 +1,7 @@
 @extends('layouts.front') @section('content')
-<form method="POST" action="{{ route('login') }}">
+<form method="POST" action="{{ route('login') }}" class="max-w-2xl mx-auto my-24 py-12 px-8 bg-gray-100">
     @csrf
-
+    <h1 class="text-2xl font-medium mb-6">Login</h1>
     <div class="row mb-3">
         <label for="email" class="col-md-4 col-form-label text-md-end">{{
             __("Email Address")
@@ -20,7 +20,7 @@
             />
 
             @error('email')
-            <span class="invalid-feedback" role="alert">
+            <span class="invalid-feedback text-red-500 mt-2 font-light block" role="alert">
                 <strong>{{ $message }}</strong>
             </span>
             @enderror
@@ -50,30 +50,11 @@
         </div>
     </div>
 
-    <div class="row mb-3">
-        <div class="col-md-6 offset-md-4">
-            <div class="form-check">
-                <input class="form-check-input" type="checkbox" name="remember"
-                id="remember" {{ old("remember") ? "checked" : "" }}>
-
-                <label class="form-check-label" for="remember">
-                    {{ __("Remember Me") }}
-                </label>
-            </div>
-        </div>
-    </div>
-
     <div class="row mb-0">
         <div class="col-md-8 offset-md-4">
-            <button type="submit" class="btn btn-primary">
-                {{ __("Login") }}
-            </button>
+            <input type="submit" class="btn btn-primary" value="Login"/>
 
-            @if (Route::has('password.request'))
-            <a class="btn btn-link" href="{{ route('password.request') }}">
-                {{ __("Forgot Your Password?") }}
-            </a>
-            @endif
+
         </div>
     </div>
 </form>

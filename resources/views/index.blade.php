@@ -23,7 +23,7 @@
                 </p>
             </div>
         </div>
-        <div class="relative  lg:hidden block min-h-[70vh]">
+        <div class="relative lg:hidden block min-h-[80vh]">
             <div class="hidden lg:block">
                 @if(isset($settings))
                     <video width="100%" height="100%" autoplay muted loop controls style="object-fit: cover"
@@ -31,7 +31,7 @@
                 @endif
             </div>
             <div
-                class="px-4 lg:px-0 text-white bg-black absolute inset-0 flex items-center justify-center flex-col gap-4">
+                class="px-4 py-8 lg:px-0 text-white bg-black absolute inset-0 flex items-center justify-center flex-col gap-4">
                 <h1 class="text-4xl lg:text-5xl flex-col flex text-center">
                     <span class="font-light">EVERY CHALLENGE</span>
                     <span class="font-bold">HAS A SOLUTION</span>
@@ -65,8 +65,20 @@
                 <button class="bg-[#DCDAD4] text-black px-4 overflow-hidden py-2 rounded-md mt-2">Read More</button>
             </div>
         </div>
-        <div class="max-w-full w-[80rem] px-4 lg:px-0 mx-auto">
-            <div class="min-h-[350px] with-shadow" style="background: url({{asset("/skyline.webp")}})">
+        <style>
+            .with-shadow::after {
+                width: 60%;
+                content: "";
+                z-index: -10;
+                height: 100%;
+                right: -75px;
+                top: 75px;
+                position: absolute;
+            }
+        </style>
+        <div class="container mb-12 relative px-4 lg:px-0 mx-auto">
+            <div class="aspect-square with-shadow lg:aspect-[1467/466] w-full"
+                 style="background: url({{asset("/skyline.webp")}})">
             </div>
         </div>
         <x-locations/>
@@ -79,8 +91,9 @@
                 find
                 success. </p>
             <div class="max-w-5xl mx-auto px-0 lg:px-4 lg:px-0 grid grid-cols-1 lg:grid-cols-2 gap-12 mt-12">
-                <img class="shadow-2xl" src="{{asset("/consultancy-card.webp")}}" alt="Premium Chain Consultancy">
-                <img class="shadow-2xl" src="{{asset("/food-bev-card.webp")}}" alt="Premium Chain Food">
+                <img class="shadow-2xl w-full" src="{{asset("/consultancy-card.webp")}}"
+                     alt="Premium Chain Consultancy">
+                <img class="shadow-2xl w-full" src="{{asset("/food-bev-card.webp")}}" alt="Premium Chain Food">
             </div>
         </div>
         <div class="relative min-h-[70vh] lg:min-h-screen"

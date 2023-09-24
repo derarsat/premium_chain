@@ -83,7 +83,7 @@
        </div>
        <!--  -->
        <!--  -->
-       <div class=" max-w-7xl text-center mx-auto px-4 lg:px-0 grid grid-cols-1 gap-8">
+       <div class=" max-w-7xl text-center mx-auto px-4 lg:px-0 grid grid-cols-1 gap-8 pb-12">
            <h1 class="text-4xl lg:text-5xl lg:text-5xl uppercase ">
                <span class="font-normal">Hospitality </span>
                <span class="font-black">consultancy</span>
@@ -100,16 +100,38 @@
                from the hospitality industry, including chefs, managers, and marketers, who work closely with clients to
                create tailor-made solutions that address their specific needs.
            </p>
+           <style>
+               .with-shadow::after {
+                   width: 60%;
+                   content: "";
+                   z-index: -10;
+                   height: 100%;
+                   right: -75px;
+                   top: 75px;
+                   position: absolute;
+               }
+           </style>
            <div class="relative w-full with-shadow min-h-[50vh]" style="background: url({{asset('hospitality-consultancy.webp')}})">
            </div>
        </div>
-       <div class="max-w-7xl text-center mx-auto px-4 lg:px-0 grid grid-cols-1 gap-8 mb-12\">
+       <div class="max-w-7xl text-center mx-auto px-4 lg:px-0 grid grid-cols-1 gap-8 mb-12 ">
            <h1 class="text-4xl lg:text-5xl uppercase">
                <span class="font-normal">GIVING BACK  </span>
                <span class="font-black">TO THE COMMUNITY</span>
            </h1>
-           <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-24 pb-12 ">
-               <div class="relative with-shadow min-h-[50vh]" style="background:url({{asset('giving-back-to-the-community.webp')}})">
+           <style>
+               .with-shadow-2::after {
+                   width: 70%;
+                   content: "";
+                   z-index: -10;
+                   height: calc(100% + 100px);
+                   right: -50px;
+                   top: -50px;
+                   position: absolute;
+               }
+           </style>
+           <div class="grid grid-cols-1 lg:grid-cols-2 gap-24  py-24 ">
+               <div class="relative with-shadow-2 min-h-[50vh]" style="background:url({{asset('giving-back-to-the-community.webp')}})">
                </div>
                <p class="text-left">
                    Premium hospitality has realized the importance of engaging in social responsibility activities as a

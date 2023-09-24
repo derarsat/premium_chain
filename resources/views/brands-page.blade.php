@@ -102,7 +102,18 @@
         <h1 class="text-center text-4xl lg:text-5xl font-light mb-12 uppercase">
             A UNIQUE  <span class="font-bold">Selling Point</span>
         </h1>
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-24 ">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-24 py-24 ">
+            <style>
+                .with-shadow::after {
+                    width: 70%;
+                    content: "";
+                    z-index: -10;
+                    height: calc(100% + 100px);
+                    right: -50px;
+                    top: -50px;
+                    position: absolute;
+                }
+            </style>
             <div class="relative with-shadow ">
                 <div class="min-h-[50vh]"
                      style="background: url({{ @App::make('url')->to('/') . '/storage' . $brand->selling_point_image}})">

@@ -3,8 +3,8 @@
 @section('title','Contact us')
 
 @section('content')
-    <div class="py-12 lg:py-44">
-        <div class="max-w-5xl mx-auto px-4 lg:px-0">
+    <div class="py-12 ">
+        <div class="max-w-2xl mx-auto px-4 lg:px-0">
             @if(session()->has('message'))
                 <p class="bg-green-500 text-white p-4 mb-6 rounded-md text-center"> {{ session()->get('message') }}</p>
             @endif
@@ -29,52 +29,52 @@
             {{--Form--}}
             <form action="{{route('submit-contact-use')}}" method="post" enctype="multipart/form-data" class="mt-12 grid grid-cols-1 gap-8">
                 @csrf
-                <input type="hidden" value="{{request()->type}}" name="type">
+                <input required type="hidden" value="{{request()->type}}" name="type">
                 <div>
                     <label for="email">Email address</label>
-                    <input type="email" name="email" id="email">
+                    <input required type="email" name="email" id="email">
                 </div>
                 @if(request()->type === 'carriers' || request()->type === 'investment' )
                     <div>
                         <label for="name">Full Name</label>
-                        <input type="text" name="name" id="name">
+                        <input required type="text" name="name" id="name">
                     </div>
                 @endif
                 @if(request()->type === 'investment' )
                     <div>
                         <label for="company_name">Company Name</label>
-                        <input type="text" name="company_name" id="company_name">
+                        <input required type="text" name="company_name" id="company_name">
                     </div>
                     <div>
                         <label for="company_website">Company Website</label>
-                        <input type="url" name="company_website" id="company_website">
+                        <input required type="url" name="company_website" id="company_website">
                     </div>
                     <div>
                         <label for="phone">Phone Number</label>
-                        <input type="text" name="phone" id="phone">
+                        <input required type="text" name="phone" id="phone">
                     </div>
                 @endif
                 @if(request()->type === 'marketing')
                     <div>
                         <label for="message">Message</label>
-                        <textarea name="message" id="message" cols="30" rows="10"></textarea>
+                        <textarea required name="message" id="message" cols="30" rows="10"></textarea>
                     </div>
                 @endif
                 @if(request()->type === 'carriers')
                     <div>
                         <label for="position">Position interested in</label>
-                        <input type="text" name="position" id="position">
+                        <input required type="text" name="position" id="position">
                     </div>
                     <div>
                         <label for="cv">Upload your cv
                             <br>
                             <span class="opacity-70">Signature Hospitality travels the world with operations in 8 diverse countries.</span>
                         </label>
-                        <input type="file" name="cv" id="cv">
+                        <input required type="file" name="cv" id="cv">
                     </div>
                 @endif
                 <div class="flex justify-center">
-                    <button class="bg-black text-white py-3 px-4 rounded">Submit Form</button>
+                    <button class="bg-black font-medium text-white py-3 px-8 rounded">Submit Form</button>
                 </div>
             </form>
         </div>

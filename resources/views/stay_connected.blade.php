@@ -17,7 +17,7 @@
     </div>
     <div
         class="max-w-7xl px-4 lg:px-0 flex flex-col gap-8 mx-auto font-bold text-lg uppercase text-center py-12 lg:py-24">
-        <a href="{{route('contact-us-view','carriers')}}" class="bg-[#DCDAD4] rounded-md py-4">Carriers</a>
+        <a href="{{route('contact-us-view','carriers')}}" class="bg-[#DCDAD4] rounded-md py-4">Careers</a>
         <a href="{{route('contact-us-view','investment')}}" class="bg-[#DCDAD4] rounded-md py-4">Investment
             opportunities</a>
         <a href="{{route('contact-us-view','marketing')}}" class="bg-[#DCDAD4] rounded-md py-4">Marketing & public
