@@ -22,54 +22,62 @@ use Intervention\Image\Facades\Image;
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::get('/', function () {
-    $settings = DB::table("site_settings")->get()->first();
-    return view('index', compact('settings'));
-});
-Route::get('/stay-connected', function () {
-    return view('stay_connected');
-})->name('stay-connected');
-Route::get('/about', function () {
-    return view('about');
-})->name('front.about');
-Route::get('/brands', function () {
-    $brands = Brand::all();
-    $images = BrandHeroImage::all();
-    return view('brands', ['brands' => $brands, 'images' => $images]);
-})->name('front-brands.index');
-Route::get('brands/{id}', function (Request $request) {
-    $brand = Brand::where('id', '=', $request->id)->with(['country', 'areas', 'images'])->get()->first();
-    return view('brands-page', ['brand' => $brand]);
-})->name('single-brand');
-Route::get('brands/{id}/card', function (Request $request) {
-    $brand = Brand::where('id', '=', $request->id)->get()->first();
-    return view('brands-page-card', ['brand' => $brand]);
-})->name('single-brand-card');
-Route::view('contact-us/{type}', 'contact_form')->name('contact-us-view');
-Route::post('submit-contact-use', function (Request $request) {
-    $content = $request->except(["type", "_token"]);
-    $type = $request->type;
-    DB::table("contact_forms")->insert([
-        'type' => $type,
-        'content' => json_encode($content)
-    ]);
-    return redirect()->back()->with('message', "Thank you, we will contact you soon !");
-})->name('submit-contact-use');
-Route::post('submit-rate-message', function (Request $request) {
-    DB::table("rate_messages")->insert([
-        'r1' => $request->r1,
-        'r2' => $request->r2,
-        'r3' => $request->r3,
-        'name' => $request->name,
-        'email' => $request->email,
-        'birth' => $request->birth,
-        'message' => $request->message,
-    ]);
-    return redirect()->back()->with('message', "Thank you for your feedback");
-})->name('submit-create-rate-messages');
+
 
 // admin routes
-Route::group(['middleware' => 'web', 'prefix' => 'admin'], function () {
+Route::group(['middleware' => 'auth', 'prefix' => 'admin'], function () {
+    // Front
+
+
+    Route::get('/', function () {
+        $settings = DB::table("site_settings")->get()->first();
+        return view('index', compact('settings'));
+    });
+    Route::get('/stay-connected', function () {
+        return view('stay_connected');
+    })->name('stay-connected');
+    Route::get('/about', function () {
+        return view('about');
+    })->name('front.about');
+    Route::get('/brands', function () {
+        $brands = Brand::all();
+        $images = BrandHeroImage::all();
+        return view('brands', ['brands' => $brands, 'images' => $images]);
+    })->name('front-brands.index');
+    Route::get('brands/{id}', function (Request $request) {
+        $brand = Brand::where('id', '=', $request->id)->with(['country', 'areas', 'images'])->get()->first();
+        return view('brands-page', ['brand' => $brand]);
+    })->name('single-brand');
+    Route::get('brands/{id}/card', function (Request $request) {
+        $brand = Brand::where('id', '=', $request->id)->get()->first();
+        return view('brands-page-card', ['brand' => $brand]);
+    })->name('single-brand-card');
+    Route::view('contact-us/{type}', 'contact_form')->name('contact-us-view');
+    Route::post('submit-contact-use', function (Request $request) {
+        $content = $request->except(["type", "_token"]);
+        $type = $request->type;
+        DB::table("contact_forms")->insert([
+            'type' => $type,
+            'content' => json_encode($content)
+        ]);
+        return redirect()->back()->with('message', "Thank you, we will contact you soon !");
+    })->name('submit-contact-use');
+    Route::post('submit-rate-message', function (Request $request) {
+        DB::table("rate_messages")->insert([
+            'r1' => $request->r1,
+            'r2' => $request->r2,
+            'r3' => $request->r3,
+            'name' => $request->name,
+            'email' => $request->email,
+            'birth' => $request->birth,
+            'message' => $request->message,
+        ]);
+        return redirect()->back()->with('message', "Thank you for your feedback");
+    })->name('submit-create-rate-messages');
+
+
+
+    // End front
     Route::view("/", 'admin.dashboard')->name('admin.index');
     Route::get("/settings-admin", function () {
         $data = DB::table('site_settings')->get();
