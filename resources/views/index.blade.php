@@ -53,10 +53,10 @@
                 <span class="font-bold">OUR HOSPITALITY </span>
             </h1>
             <p class="text-center mt-2">
-                Premium Chain travels the world with operations in 8 diverse countries.
+                the chain travels the world with operations in 8 diverse countries.
                 Headquartered in Riyadh, our consultancy and management agency boasts 25 years of experience as the
                 forefront of our work.
-                With various projects in the food and beverage industry, Premium Chain provides businesses with
+                With various projects in the food and beverage industry, the chain provides businesses with
                 consulting
                 services that include branding, design, operations, human resources, research and development,
                 franchising,
@@ -90,13 +90,13 @@
                 <span class="font-light">our</span>
                 <span class="font-bold">Divisions </span>
             </h1>
-            <p class="text-center mt-2">Premium Chain can provide businesses with the following services to grow and
+            <p class="text-center mt-2">the chain can provide businesses with the following services to grow and
                 find
                 success. </p>
             <div class="max-w-5xl mx-auto px-0 lg:px-4 lg:px-0 grid grid-cols-1 lg:grid-cols-2 gap-12 mt-12">
                 <img class="shadow-2xl w-full" src="{{asset("/consultancy-card.webp")}}"
-                     alt="Premium Chain Consultancy">
-                <img class="shadow-2xl w-full" src="{{asset("/food-bev-card.webp")}}" alt="Premium Chain Food">
+                     alt="the chain Consultancy">
+                <img class="shadow-2xl w-full" src="{{asset("/food-bev-card.webp")}}" alt="the chain Food">
             </div>
         </div>
         <div class="relative min-h-[70vh] lg:min-h-screen"
@@ -107,7 +107,7 @@
                     <h1 class="text-4xl lg:text-5xl font-bold uppercase"><span class="font-light">Join</span> Our Team
                     </h1>
                     <h4 class="font-light">If you have the passion, drive, and devotion to hospitality and success as we
-                        do, then join the team and become a valuable addition to the Premium Chain family. </h4>
+                        do, then join the team and become a valuable addition to the the chain family. </h4>
                     <div class="flex justify-center">
                         <a href="{{route('contact-us-view','carriers')}}"
                            class="bg-[#DCDAD4] text-black px-4 py-2 rounded-md">Get in touch</a>

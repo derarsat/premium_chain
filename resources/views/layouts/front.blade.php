@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-token" content="{{ csrf_token() }}">
-    <title>Premium Chain - @yield('title')</title>
+    <title>the chain - @yield('title')</title>
     <script src="{{ asset('js/app.js') }}" defer></script>
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
@@ -23,7 +23,7 @@
 >
     <div class="p-4">
         <a href="/">
-            <img class="w-44 mx-auto mb-4" src="{{asset('/premium-chain.png')}}" alt="Premium Chain">
+            <img class="w-44 mx-auto mb-4" src="{{asset('/the-chain.svg')}}" alt="the chain">
         </a>
         <div class=" border-t border-white ">
             <ul class="flex items-center justify-center gap-4 pt-4 text-white">
@@ -38,7 +38,7 @@
 </header>
 <header class="block lg:hidden bg-black text-white p-4 flex items-center justify-between">
     <a href="/">
-        <img class="w-[7rem] " src="{{asset('/premium-chain.png')}}" alt="Premium Chain">
+        <img class="w-[7rem] " src="{{asset('/the-chain.svg')}}" alt="the chain">
 
     </a>
     <button
@@ -57,7 +57,7 @@
         <h5 id="drawer-label"
             class="inline-flex items-center mb-4 text-base font-semibold text-gray-500 dark:text-gray-400">
 
-            <a href="/"> Premium Chain</a>
+            <a href="/"> the chain</a>
         </h5>
         <button type="button" data-drawer-hide="drawer-example" aria-controls="drawer-example"
                 class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 absolute top-2.5 right-2.5 inline-flex items-center justify-center dark:hover:bg-gray-600 dark:hover:text-white">

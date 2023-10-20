@@ -47,7 +47,7 @@
         <div class="max-w-4xl text-center mx-auto py-12 lg:py-24">
             <h1 class="text-4xl lg:text-5xl font-light uppercase text-center mb-6">Our <span
                     class="font-bold">Locations</span></h1>
-            <p>With the help of Premium Chain, our clients have turned a new page on their businesses to find success in
+            <p>With the help of the chain, our clients have turned a new page on their businesses to find success in
                 various corners of the world. </p>
         </div>
         <div class="mb-4 ">
@@ -157,7 +157,7 @@
                 let marker = new google.maps.Marker({
                     position: myLatLng,
                     map: m,
-                    title: "Premium Chain"
+                    title: "the chain"
                 });
                 m.setOptions({
                     styles: [

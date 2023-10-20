@@ -1,7 +1,7 @@
 <div class="bg-black">
     <div class="container text-white py-8">
         <a href="/">
-            <img class="w-44" src="{{asset('premium-chain.png')}}" alt="Premium Chain">
+            <img class="w-44" src="{{asset('the-chain.svg')}}" alt="the chain">
 
         </a>
         <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 py-12">

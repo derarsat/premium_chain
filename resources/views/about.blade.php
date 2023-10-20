@@ -24,7 +24,7 @@
                        <span class="font-bold">to new heights</span>
                    </h1>
                    <p>
-                       Premium Chain offers a variety of culinary experiences specializing in the Lebanese Cuisine and has
+                       the chain offers a variety of culinary experiences specializing in the Lebanese Cuisine and has
                        more
                        than 25 years of experience in the food and beverage industry. The company’s expertise includes
                        catering, event production, concept development, and menu planning, among others. Owning, Operating,
@@ -33,13 +33,13 @@
                        <br>
                        <br>
                        As a strategic partner to the General Entertainment Authority and SELA (Sports, Entertainment, and
-                       Culture), Premium Hospitality has contributed to the success of numerous events in Saudi Arabia. The
+                       Culture), the chain has contributed to the success of numerous events in Saudi Arabia. The
                        company has played a significant role in the organization of the Riyadh Season and Jeddah Seasons,
                        as
                        well as Formula One events.
                        <br>
                        <br>
-                       With a focus on providing the highest quality culinary experiences, Premium Hospitality prides
+                       With a focus on providing the highest quality culinary experiences, the chain prides
                        itself on
                        excellent service and attention to detail.
                        The company is dedicated to providing customized solutions to meet the unique needs and preferences
@@ -89,12 +89,12 @@
                <span class="font-black">consultancy</span>
            </h1>
            <p class="">
-               Premium Hospitality has a diverse division that offers a range of services to clients wanting to start their
+               the chain has a diverse division that offers a range of services to clients wanting to start their
                own restaurants, including branding, recruitment, marketing, and operational services. The success of
-               Premium Hospitality lies in the company's commitment to providing high-quality hospitality services that
+               the chain lies in the company's commitment to providing high-quality hospitality services that
                cater to the needs of their customers.
 
-               Premium Hospitality also has a consultancy division, which offers turnkey consultancy solutions to clients
+               the chain also has a consultancy division, which offers turnkey consultancy solutions to clients
                wanting to start their own restaurants. The consultancy team provides a range of services, including
                branding, recruitment, marketing, and operational services. The team comprises experienced professionals
                from the hospitality industry, including chefs, managers, and marketers, who work closely with clients to
@@ -134,7 +134,7 @@
                <div class="relative with-shadow-2 min-h-[50vh]" style="background:url({{asset('giving-back-to-the-community.webp')}})">
                </div>
                <p class="text-left">
-                   Premium hospitality has realized the importance of engaging in social responsibility activities as a
+                   the chain has realized the importance of engaging in social responsibility activities as a
                    means of not only giving back to create a culture of support to all employees. Being one of the leading
                    restaurant operators in Riyadh, Saudi Arabia, with a portfolio of over 10 brands. The company has a
                    strong reputation for providing high-quality food and service to customers, and it has long been

@@ -22,7 +22,7 @@
             href="{{ route('admin.index') }}"
             class="font-bold italic text-lg text-indigo-600"
         >
-            PREMIUM CHAIN
+            the chain
         </a>
         <div class="flex items-center gap-3">
             <div class="flex items-center gap-4 text-gray-600 font-light">

@@ -32,8 +32,8 @@
     </div>
 
     <div class="flex items-center justify-center gap-4 mb-12">
-        <a href="#"><img class="w-14" src="{{asset('/facebook-button.png')}}" alt="Premium chain facebook link"></a>
-        <a href="#"><img class="w-14" src="{{asset('/instagram-button.png')}}" alt="Premium chain instagram link"></a>
-        <a href="#"><img class="w-14" src="{{asset('/linkedin-button.png')}}" alt="Premium chain linkedin link"></a>
+        <a href="#"><img class="w-14" src="{{asset('/facebook-button.png')}}" alt="the chain facebook link"></a>
+        <a href="#"><img class="w-14" src="{{asset('/instagram-button.png')}}" alt="the chain instagram link"></a>
+        <a href="#"><img class="w-14" src="{{asset('/linkedin-button.png')}}" alt="the chain linkedin link"></a>
     </div>
 @endsection

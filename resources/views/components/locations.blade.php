@@ -10,7 +10,7 @@
                 <span class="font-bold">international range </span>
             </h1>
             <p class="text-center">
-                With the help of Premium Chain, our clients have turned a new page on their businesses to find
+                With the help of the chain, our clients have turned a new page on their businesses to find
                 success
                 in various corners of the world.
             </p>
@@ -362,7 +362,7 @@
                 new google.maps.Marker({
                     position: {lat: Number(area.lat), lng: Number(area.lng)},
                     map: m,
-                    title: "Premium Chain"
+                    title: "the chain"
                 });
                 markers.push({lat: Number(area.lat), lng: Number(area.lng)})
                 new google.maps.Circle({
