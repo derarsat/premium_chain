@@ -68,7 +68,7 @@
                     <div>
                         <label for="cv">Upload your cv
                             <br>
-                            <span class="opacity-70">Signature Hospitality travels the world with operations in 8 diverse countries.</span>
+                            <span class="opacity-70">the chain travels the world with operations in 8 diverse countries.</span>
                         </label>
                         <input required type="file" name="cv" id="cv">
                     </div>

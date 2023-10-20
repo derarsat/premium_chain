@@ -28,7 +28,7 @@
     <div class="max-w-5xl px-4 lg:px-0 text-center mx-auto py-12 lg:py-24">
         <h1 class="text-4xl lg:text-5xl font-light uppercase text-center mb-6">Brand <span
                 class="font-bold">Atmosphere</span></h1>
-        <p>Signature Hospitality travels the world with operations in 8 diverse countries. Headquartered in Riyadh, our
+        <p>the chain travels the world with operations in 8 diverse countries. Headquartered in Riyadh, our
             consultancy and management agency boasts 25 years of experience as the forefront of our work.</p>
         <div class="carousel mt-12 w-full">
             @foreach ($brand->images as $image)
@@ -131,7 +131,7 @@
             class="absolute bg-gradient-to-t from-[rgba(0,0,0,1)] to-transparent via-[rgba(0,0,0,0.4)] inset-0 text-white text-center flex items-center justify-center flex-col z-10">
             <div class="max-w-4xl px-4 lg:px-0 flex flex-col gap-8">
                 <h1 class="text-4xl lg:text-5xl  uppercase">We value <span class="font-bold"> your opinion</span></h1>
-                <h4 class="font-light">Signature Hospitality can provide businesses with the following services to grow and find success.  </h4>
+                <h4 class="font-light">the chain can provide businesses with the following services to grow and find success.  </h4>
                 <div class="flex justify-center">
                     <a href="{{route('single-brand-card',$brand->id)}}"
                        class="bg-[#DCDAD4] text-black px-8 py-3 uppercase font-medium text-xl">Rate your experience</a>

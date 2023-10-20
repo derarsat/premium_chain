@@ -17,7 +17,7 @@
                     <span class="font-bold">HAS A SOLUTION</span>
                 </h1>
                 <p class="max-w-4xl mx-auto text-center">
-                    Signature Hospitality brings change and success to the forefront of a brand or business.
+                    the chain brings change and success to the forefront of a brand or business.
                     We believe in the power of positive experiences that can help a brand tackle its problems, pinpoint
                     the
                     areas for improvement, and soar to new and exciting heights.
@@ -40,7 +40,7 @@
                     <span class="font-bold">HAS A SOLUTION</span>
                 </h1>
                 <p class="max-w-4xl mx-auto text-center">
-                    Signature Hospitality brings change and success to the forefront of a brand or business.
+                    the chain brings change and success to the forefront of a brand or business.
                     We believe in the power of positive experiences that can help a brand tackle its problems, pinpoint
                     the
                     areas for improvement, and soar to new and exciting heights.
