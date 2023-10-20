@@ -1,13 +1,18 @@
 @extends('layouts.front')
 @section('title','Home')
 @section('content')
-    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
     <main class="grid grid-cols-1 gap-12 lg:gap-24">
-        <div class="relative hidden lg:block">
+        <div class="relative block">
             <div class="hidden lg:block">
                 @if(isset($settings))
                     <video width="100%" height="100%" autoplay muted loop controls style="object-fit: cover"
                            src="{{URL::asset('uploads/'.$settings->video)}}"></video>
+                @endif
+            </div>
+            <div class="block lg:hidden h-[90vh] overflow-hidden">
+                @if(isset($settings))
+                    <video width="100%" height="100%" autoplay muted loop controls style="object-fit: cover"
+                           src="{{URL::asset('uploads/'.$settings->mobile_video)}}"></video>
                 @endif
             </div>
             <div
@@ -17,30 +22,7 @@
                     <span class="font-bold">HAS A SOLUTION</span>
                 </h1>
                 <p class="max-w-4xl mx-auto text-center">
-                    Signature Hospitality brings change and success to the forefront of a brand or business.
-                    We believe in the power of positive experiences that can help a brand tackle its problems, pinpoint
-                    the
-                    areas for improvement, and soar to new and exciting heights.
-                </p>
-            </div>
-        </div>
-        <div class="relative lg:hidden block min-h-[80vh]">
-            <div id="particles-js" class="z-30"></div>
-
-            {{--            <div class="hidden lg:block">--}}
-{{--                @if(isset($settings))--}}
-{{--                    <video width="100%" height="100%" autoplay muted loop controls style="object-fit: cover"--}}
-{{--                           src="{{URL::asset('uploads/'.$settings->video)}}"></video>--}}
-{{--                @endif--}}
-{{--            </div>--}}
-            <div
-                class="px-4 py-8 lg:px-0 text-white absolute inset-0 flex items-center justify-center flex-col gap-4">
-                <h1 class="text-4xl lg:text-5xl flex-col flex text-center">
-                    <span class="font-light">EVERY CHALLENGE</span>
-                    <span class="font-bold">HAS A SOLUTION</span>
-                </h1>
-                <p class="max-w-4xl mx-auto text-center">
-                    Signature Hospitality brings change and success to the forefront of a brand or business.
+                    the chain brings change and success to the forefront of a brand or business.
                     We believe in the power of positive experiences that can help a brand tackle its problems, pinpoint
                     the
                     areas for improvement, and soar to new and exciting heights.
@@ -117,57 +99,4 @@
             </div>
         </div>
     </main>
-
-
-    <script>
-        particlesJS("particles-js", {
-            "particles": {
-                "number": {"value": 150, "density": {"enable": true, "value_area": 800}},
-                "color": {"value": "#ffffff"},
-                "shape": {
-                    "type": "circle",
-                    "stroke": {"width": 0, "color": "#000000"},
-                    "polygon": {"nb_sides": 3},
-                    "image": {"src": "img/github.svg", "width": 100, "height": 100}
-                },
-                "opacity": {
-                    "value": 0.5,
-                    "random": false,
-                    "anim": {"enable": false, "speed": 1, "opacity_min": 0.1, "sync": false}
-                },
-                "size": {
-                    "value": 3,
-                    "random": true,
-                    "anim": {"enable": false, "speed": 40, "size_min": 0.1, "sync": false}
-                },
-                "line_linked": {"enable": true, "distance": 150, "color": "#ffffff", "opacity": 0.4, "width": 1},
-                "move": {
-                    "enable": true,
-                    "speed": 6,
-                    "direction": "none",
-                    "random": false,
-                    "straight": false,
-                    "out_mode": "out",
-                    "bounce": false,
-                    "attract": {"enable": false, "rotateX": 600, "rotateY": 1200}
-                }
-            },
-            "interactivity": {
-                "detect_on": "canvas",
-                "events": {
-                    "onhover": {"enable": true, "mode": "repulse"},
-                    "onclick": {"enable": true, "mode": "push"},
-                    "resize": true
-                },
-                "modes": {
-                    "grab": {"distance": 400, "line_linked": {"opacity": 1}},
-                    "bubble": {"distance": 400, "size": 40, "duration": 2, "opacity": 8, "speed": 3},
-                    "repulse": {"distance": 200, "duration": 0.4},
-                    "push": {"particles_nb": 4},
-                    "remove": {"particles_nb": 2}
-                }
-            },
-            "retina_detect": true
-        });
-    </script>
 @endsection

@@ -23,7 +23,7 @@ use Intervention\Image\Facades\Image;
 |
 */
 Route::get('/', function () {
-    $settings = DB::table("site_settings")->get()->first();
+    $settings = DB::table("site_settings")->get()->last();
     return view('index', compact('settings'));
 });
 Route::get('/stay-connected', function () {
@@ -146,6 +146,13 @@ Route::group(['middleware' => 'web', 'prefix' => 'admin'], function () {
             $path = public_path() . '/uploads/';
             $file->move($path, $filename);
             $data["video"] = $filename;
+        }
+        if ($request->hasFile('mobile_video')) {
+            $file = $request->file('mobile_video');
+            $filename = Str::random(30) . '.' . $file->getClientOriginalExtension();
+            $path = public_path() . '/uploads/';
+            $file->move($path, $filename);
+            $data["mobile_video"] = $filename;
         }
         DB::table("site_settings")->insert($data);
         return redirect()->back();

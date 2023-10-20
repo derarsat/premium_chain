@@ -53,7 +53,7 @@
     </style>
     <div class="container text-center py-12 lg:py-24 flex flex-col gap-6">
         <h1 class="text-4xl lg:text-5xl">OUR <span class="font-bold">SUCCESSFUL BRANDS</span></h1>
-        <p>With the help of Signature Hospitality, our clients have turned a new page on their businesses <br> to find
+        <p>With the help of the chain, our clients have turned a new page on their businesses <br> to find
             success in various corners of the world. </p>
     </div>
     <div class="max-w-5xl mx-auto px-4 lg:px-0 mb-12">

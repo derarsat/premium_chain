@@ -1176,6 +1176,12 @@ input:checked + .toggle-bg {
 .h-screen {
   height: 100vh;
 }
+.h-\[80vh\] {
+  height: 80vh;
+}
+.h-\[90vh\] {
+  height: 90vh;
+}
 .max-h-full {
   max-height: 100%;
 }

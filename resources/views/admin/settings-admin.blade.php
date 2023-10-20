@@ -7,8 +7,12 @@
             <form enctype="multipart/form-data" method="post" action="{{route('settings-controller')}}" class="grid grid-cols-1 gap-4">
                 @csrf
                 <div>
-                    <label for="linkedIn">Home Page Video</label>
-                    <input accept="video/*"  type="file" name="video" id="video" placeholder="Select home page video" required>
+                    <label for="video">Home Page Desktop Video</label>
+                    <input accept="video/*"  type="file" name="video" id="video" placeholder="Select home page desktop video" required>
+                </div>
+                <div>
+                    <label for="video">Home Page Mobile Video</label>
+                    <input accept="video/*"  type="file" name="mobile_video" id="mobile_video" placeholder="Select home page mobile video" required>
                 </div>
                 <div>
                     <label for="email">Email address</label>
