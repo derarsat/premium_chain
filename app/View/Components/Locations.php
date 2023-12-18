@@ -2,6 +2,7 @@
 
 namespace App\View\Components;
 
+use App\Models\Area;
 use App\Models\Brand;
 use App\Models\Country;
 use Illuminate\View\Component;
@@ -25,8 +26,9 @@ class Locations extends Component
      */
     public function render()
     {
-        $countries = Country::with(['areas'])->get();
+        $brands = Brand::with(['areas'])->get()->groupBy('founded');
 
-        return view('components.locations', compact('countries'));
+
+        return view('components.locations', compact('brands'));
     }
 }

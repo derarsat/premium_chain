@@ -7,10 +7,13 @@
             <input type="text" name="name" id="name" placeholder="Enter brand name" required>
         </div>
         <div>
+            <label for="founded">Year Founded</label>
+            <input type="number" name="founded" id="founded" min="2000" max="3000" value="2023" placeholder="Enter brand founded year" required>
+        </div>
+        <div>
             <label for="color">Brand Color</label>
             <input style="padding:5px;height: 40px" type="color" name="color" id="color" required>
         </div>
-        <div></div>
         <div></div>
         <div>
             <label for="hero_image">Hero image</label>

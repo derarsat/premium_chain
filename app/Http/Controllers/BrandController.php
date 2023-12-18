@@ -59,9 +59,11 @@ class BrandController extends Controller
                     'selling_point_description' => 'required',
                     'menu_description' => 'required',
                     'color' => 'required',
+                    'founded' => 'required',
                 ]);
                 $brand = new Brand();
                 $brand->name = $validated["name"];
+                $brand->founded = $validated["founded"];
                 $brand->color = $validated["color"];
                 $brand->description = $validated["description"];
                 $brand->selling_point_description = $validated["selling_point_description"];

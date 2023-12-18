@@ -1,7 +1,8 @@
 <div id="locations">
     <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
     <script
-        src="https://maps.googleapis.com/maps/api/js?key={{env('MAP_KEY')}}&callback=initMaps"
+        src="https://maps.googleapis.com/maps/api/js&callback=setMap"
+        {{--        src="https://maps.googleapis.com/maps/api/js?key={{env('MAP_KEY')}}&callback=initMaps"--}}
         defer></script>
     <div class="container">
         <div class="grid grid-cols-1 gap-6">
@@ -14,58 +15,43 @@
                 success
                 in various corners of the world.
             </p>
-            {{--Loop--}}
             {{--Top--}}
-            <ul class="flex flex-wrap justify-center -mb-px text-sm font-light text-center" id="tab"
-                data-tabs-toggle="#countries"
-                role="tablist">
-                @foreach($countries as $country)
-                    <li class="mr-2" role="presentation">
-                        <button class="inline-block border-b-2 rounded-t-lg"
-                                id="{{str_replace(" ","-",$country->name)}}-tab"
-                                data-tabs-target="#{{str_replace(" ","-",$country->name)}}" type="button" role="tab"
-                                aria-controls="{{str_replace(" ","-",$country->name)}}"
-                                aria-selected="false">
+            <div class="grid grid-cols-3 lg:grid-cols-6 gap-6">
+                @foreach($brands as $year => $brands)
 
-                            <span id="{{str_replace(" ","-",$country->name)}}dropdownHoverButton"
-                                  data-dropdown-toggle="{{str_replace(" ","-",$country->name)}}dropdownHover"
-                                  data-dropdown-trigger="hover"
-                                  class="font-light rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center "
-                                  type="button">
-                                {{$country->name}}
-                            </span>
-                            <!-- Dropdown menu -->
-                            <div id="{{str_replace(" ","-",$country->name)}}dropdownHover"
-                                 class="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow w-44 ">
-                                <ul class="py-2 text-sm text-gray-700 "
-                                    aria-labelledby="{{str_replace(" ","-",$country->name)}}dropdownHoverButton">
-                                    @foreach($country->areas as $area)
-                                        <li>
-                                            <span
-                                                class="block px-4 py-2 hover:bg-gray-100 ">{{$area->name}}</span>
-                                        </li>
-                                    @endforeach
+                    <button id="{{$year}}" data-dropdown-toggle="dropdown"
+                            class="bg-gray-500 text-white px-4 py-2"
+                            type="button">{{$year}}
+                    </button>
 
-                                </ul>
-                            </div>
-                        </button>
-                    </li>
-                @endforeach
-            </ul>
-            {{--End Top--}}
-            <div id="tab">
-                @foreach($countries as $country)
-                    <div class="hidden  rounded-lg bg-gray-50" id="{{str_replace(" ","-",$country->name)}}"
-                         role="tabpanel"
-                         aria-labelledby="{{str_replace(" ","-",$country->name)}}-tab">
-                        <div id="{{str_replace(" ","-",$country->name)}}-map" data-areas="{{$country->areas}}"
-                             class="map col-span-3 aspect-[3/2] lg:aspect-[3/1]">
-                            {{$country->name}}
-                        </div>
+                    <!-- Dropdown menu -->
+                    <div id="dropdown"
+                         class="z-10 hidden text-white">
+                        <ul class=""
+                            aria-labelledby="{{$year}}">
+                            @foreach($brands as $key => $brand)
+                                <div class="text-center area-zebra px-3 py-2 cursor-pointer hover:scale-105 transform transition duration-300" onclick="setMap({{$brand}})">
+                                    <img class="w-64" src="{{ @App::make('url')->to('/') . '/storage' . $brand->light_logo}}"
+                                         alt="{{$brand->name}}">
+                                    <div>
+                                        @foreach($brand->areas as $area)
+                                            <p class="my-2 font-light">
+                                                {{$area->name}}
+                                            </p>
+                                        @endforeach
+                                    </div>
+                                </div>
+                            @endforeach
+                        </ul>
                     </div>
+
                 @endforeach
             </div>
-            {{--End Loop--}}
+            {{--End Top--}}
+
+            <div id="map" class="aspect-[3/2] lg:aspect-[3/1]">
+
+            </div>
         </div>
     </div>
 </div>
@@ -382,5 +368,13 @@
             markers.length > 1 && m.fitBounds(bounds);
             m.setOptions({styles: mapOptions});
         }
+    }
+
+
+    function setMap(brand) {
+        let map = new google.maps.Map(document.getElementById("map"), {
+            zoom: 10,
+            // center: {lat: Number(data[0].lat), lng: Number(data[0].lng)}
+        });
     }
 </script>
