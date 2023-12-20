@@ -48,6 +48,7 @@
                         onclick="handleAreaClick(event)"
                         data-name="{{$area->name}}"
                         data-id="{{$area->id}}"
+                        data-founded="{{$area->founded}}"
                         data-lat="{{$area->lat}}"
                         data-lng="{{$area->lng}}"
                         data-brand="{{$area->brand->id}}"
@@ -158,10 +159,20 @@
                         />
                     </div>
                     <div>
+                        <label for="area-founded">Area founded</label>
+                        <input
+                            type="text"
+                            name="founded"
+                            id="area-founded"
+                            placeholder="Enter area founded date"
+                            required
+                        />
+                    </div>
+                    <div>
                         <label for="lat">Area lat</label>
                         <input
                             type="text"
-                            name="lat"
+                            name="area-lat"
                             id="area-lat"
                             required
                         />
@@ -171,7 +182,7 @@
                         <input
                             type="text"
                             name="area-lng"
-                            id="lng"
+                            id="area-lng"
                             required
                         />
                     </div>
@@ -281,22 +292,25 @@
         setTimeout(()=>{
             let inputId = document.getElementById("area-id");
             let inputName = document.getElementById("area-name");
+            let inputFounded = document.getElementById("area-founded");
             let countryId = document.getElementById("country_id");
             let brandId = document.getElementById("brand_id");
             let inputLat = document.getElementById("area-lat");
             let inputLng = document.getElementById("area-lng");
             let name = event.target.getAttribute("data-name");
+            let founded = event.target.getAttribute("data-founded");
             let id = event.target.getAttribute("data-id");
             let country = event.target.getAttribute("data-country");
             let brand = event.target.getAttribute("data-brand");
             let lat = event.target.getAttribute("data-lat");
             let lng = event.target.getAttribute("data-lng");
-            inputLng.value = lng;
-            inputLat.value = lat;
+            inputLng.value = lng || 0;
+            inputLat.value = lat || 0;
             countryId.value = country;
             brandId.value = brand;
             inputId.value = id;
             inputName.value = name;
+            inputFounded.value = founded;
         },1000)
     }
 

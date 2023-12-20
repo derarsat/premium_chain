@@ -70,7 +70,7 @@ class AreaController extends Controller
      */
     public function update(UpdateAreaRequest $request, Area $area)
     {
-        //
+        dd($request->all());
     }
 
     /**

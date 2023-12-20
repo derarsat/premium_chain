@@ -126,8 +126,9 @@ Route::group(['middleware' => 'web', 'prefix' => 'admin'], function () {
         $area = Area::find($request->id);
         if ($request->action === "update") {
             $area->name = $request->name;
-            $area->lat = $request->lat;
-            $area->lng = $request->lng;
+            $area->founded = $request->founded;
+            $area->lat = $request["area-lat"];
+            $area->lng = $request["area-lng"];
             $area->brand_id = $request->brand_id;
             $area->country_id = $request->country_id;
             $area->save();
