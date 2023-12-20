@@ -34,17 +34,13 @@
             left: 40px;
         }
 
-        .slick-prev:before {
-            content: '←';
-        }
+
 
         .slick-next {
             right: 40px;
         }
 
-        .slick-next:before {
-            content: '→';
-        }
+
 
         .slick-prev:before,
         .slick-next:before {

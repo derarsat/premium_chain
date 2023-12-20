@@ -4,6 +4,7 @@
         <tr>
             <th scope="col" class="px-6 py-3">#ID</th>
             <th scope="col" class="px-6 py-3">Name</th>
+            <th scope="col" class="px-6 py-3">Founded</th>
             <th scope="col" class="px-6 py-3">Brand</th>
             <th scope="col" class="px-6 py-3">Country</th>
             <th scope="col" class="px-6 py-3">Actions</th>
@@ -23,6 +24,12 @@
                     class="px-6 py-4 font-light text-gray-900 whitespace-nowrap"
                 >
                     {{$area->name}}
+                </th>
+                <th
+                    scope="row"
+                    class="px-6 py-4 font-light text-gray-900 whitespace-nowrap"
+                >
+                    {{$area->founded}}
                 </th>
                 <th
                     scope="row"

@@ -26,9 +26,7 @@ class Locations extends Component
      */
     public function render()
     {
-        $brands = Brand::with(['areas'])->get()->groupBy('founded');
-
-
-        return view('components.locations', compact('brands'));
+        $areas = Area::with('brand')->get();
+        return view('components.locations', compact('areas'));
     }
 }

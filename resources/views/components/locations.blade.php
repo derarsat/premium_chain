@@ -11,44 +11,49 @@
                 <span class="font-bold">international range </span>
             </h1>
             <p class="text-center">
-                With the help of the chain, our clients have turned a new page on their businesses to find
-                success
-                in various corners of the world.
+                With the help of The Chain, our clients have turned a new page on their businesses to find success in
+                various corners of the world. <br> Our goal is to expand within the MENA region and Europe by
+                implementing
+                features that place The Chain on a pedestal. By using measures such as diverse menus in parallel with
+                global marketing strategies, The Chain increases its market shares and growth.
+
             </p>
             {{--Top--}}
-            <div class="grid grid-cols-3 lg:grid-cols-6 gap-6">
-                @foreach($brands as $year => $brands)
+            {{--            <div class="grid grid-cols-3 lg:grid-cols-6 gap-6">--}}
+            {{--                @foreach($brands as $year => $brands)--}}
 
-                    <button id="{{$year}}" data-dropdown-toggle="dropdown"
-                            class="bg-gray-500 text-white px-4 py-2"
-                            type="button">{{$year}}
-                    </button>
+            {{--                    <button id="{{$year}}" data-dropdown-toggle="dropdown"--}}
+            {{--                            class="bg-gray-500 text-white px-4 py-2"--}}
+            {{--                            type="button">{{$year}}--}}
+            {{--                    </button>--}}
 
-                    <!-- Dropdown menu -->
-                    <div id="dropdown"
-                         class="z-10 hidden text-white">
-                        <ul class=""
-                            aria-labelledby="{{$year}}">
-                            @foreach($brands as $key => $brand)
-                                <div class="text-center area-zebra px-3 py-2 cursor-pointer hover:scale-105 transform transition duration-300" onclick="setMap({{$brand}})">
-                                    <img class="w-64" src="{{ @App::make('url')->to('/') . '/storage' . $brand->light_logo}}"
-                                         alt="{{$brand->name}}">
-                                    <div>
-                                        @foreach($brand->areas as $area)
-                                            <p class="my-2 font-light">
-                                                {{$area->name}}
-                                            </p>
-                                        @endforeach
-                                    </div>
-                                </div>
-                            @endforeach
-                        </ul>
-                    </div>
+            {{--                    <!-- Dropdown menu -->--}}
+            {{--                    <div id="dropdown"--}}
+            {{--                         class="z-10 hidden text-white">--}}
+            {{--                        <ul class=""--}}
+            {{--                            aria-labelledby="{{$year}}">--}}
+            {{--                            @foreach($brands as $key => $brand)--}}
+            {{--                                <div class="text-center area-zebra px-3 py-2 cursor-pointer hover:scale-105 transform transition duration-300" onclick="setMap({{$brand}})">--}}
+            {{--                                    <img class="w-64" src="{{ @App::make('url')->to('/') . '/storage' . $brand->light_logo}}"--}}
+            {{--                                         alt="{{$brand->name}}">--}}
+            {{--                                    <div>--}}
+            {{--                                        @foreach($brand->areas as $area)--}}
+            {{--                                            <p class="my-2 font-light">--}}
+            {{--                                                {{$area->name}}--}}
+            {{--                                            </p>--}}
+            {{--                                        @endforeach--}}
+            {{--                                    </div>--}}
+            {{--                                </div>--}}
+            {{--                            @endforeach--}}
+            {{--                        </ul>--}}
+            {{--                    </div>--}}
 
-                @endforeach
-            </div>
+            {{--                @endforeach--}}
+            {{--            </div>--}}
             {{--End Top--}}
+            <div id="top" class="grid grid-cols-6 gap-4">
 
+            </div>
             <div id="map" class="aspect-[3/2] lg:aspect-[3/1]">
 
             </div>
@@ -328,53 +333,40 @@
         }
     ]
 
-    function initMaps() {
-        const mapsWrap = document.querySelectorAll(".map");
-        for (let i = 0; i < mapsWrap.length; i++) {
-            let map = mapsWrap[i]
-            let mapId = map.getAttribute("id").replaceAll(" ", "-");
-            let data = JSON.parse(map.getAttribute("data-areas"))
-            if (!data[0]) {
-                return
-            }
-            let m = new google.maps.Map(document.getElementById(mapId), {
-                zoom: 10,
-                center: {lat: Number(data[0].lat), lng: Number(data[0].lng)}
-            });
-            var markers = []
-            var bounds = new google.maps.LatLngBounds();
-            for (let i = 0; i < data.length; i++) {
-                const area = data[i]
-                new google.maps.Marker({
-                    position: {lat: Number(area.lat), lng: Number(area.lng)},
-                    map: m,
-                    title: "the chain"
-                });
-                markers.push({lat: Number(area.lat), lng: Number(area.lng)})
-                new google.maps.Circle({
-                    strokeColor: '#ccc',
-                    strokeOpacity: 1,
-                    strokeWeight: 3,
-                    map: m,
-                    center: {lat: Number(area.lat), lng: Number(area.lng)}, // Same as marker position
-                    radius: 25000 // Radius in meters
-                });
-            }
-            for (var s = 0; s < markers.length; s++) {
-                bounds.extend(markers[s]);
-            }
+    const groupBy = (x, f) => x.reduce((a, b, i) => ((a[f(b, i, x)] ||= []).push(b), a), {});
+    const jsonAreas = @json($areas);
+    const groupByYear = groupBy(jsonAreas, (x) => x.founded);
+    // loop through the years and create a button for each year in #top
+    const topWrapper = document.getElementById("top");
 
+    for (const year in groupByYear) {
+        const button = document.createElement("div");
+        button.id = year;
+        button.classList.add("bg-gray-500", "text-white", "px-8", "py-2", "relative", "group", "text-center")
+        button.innerHTML = year;
+        const brandWrapper = document.createElement("div");
+        brandWrapper.classList.add("hidden", "absolute", "top-10", "left-0", "w-full", "bg-gray-200", "group-hover:block");
+        groupByYear[year].map((area) => {
+            brandWrapper.innerHTML += `
+            <div class="area-zebra">
+                <img class="w-full transition hover:scale-105 "  src="{{ @App::make('url')->to('/') . '/storage' }}${area.brand.light_logo}"
+                                     alt="${area.brand.name}">
+            </div>
 
-            markers.length > 1 && m.fitBounds(bounds);
-            m.setOptions({styles: mapOptions});
-        }
-    }
-
-
-    function setMap(brand) {
-        let map = new google.maps.Map(document.getElementById("map"), {
-            zoom: 10,
-            // center: {lat: Number(data[0].lat), lng: Number(data[0].lng)}
+            `;
         });
+        button.appendChild(brandWrapper);
+
+        // when hovering over the button, show the list of brands
+        button.addEventListener("mouseover", () => {
+            // show the list of brands
+
+        });
+        button.addEventListener("click", () => {
+            // TODO
+            // setMap(groupByYear[year]);
+        });
+        topWrapper.appendChild(button);
     }
+
 </script>

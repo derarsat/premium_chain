@@ -1,5 +1,5 @@
 @extends('layouts.front')
-
+@section('title','Brands')
 @section('content')
     <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
     <script
@@ -28,8 +28,7 @@
     <div class="max-w-5xl px-4 lg:px-0 text-center mx-auto py-12 lg:py-24">
         <h1 class="text-4xl lg:text-5xl font-light uppercase text-center mb-6">Brand <span
                 class="font-bold">Atmosphere</span></h1>
-        <p>the chain travels the world with operations in 8 diverse countries. Headquartered in Riyadh, our
-            consultancy and management agency boasts 25 years of experience as the forefront of our work.</p>
+        <p>{{$brand->atmosphere}}</p>
         <div class="carousel mt-12 w-full">
             @foreach ($brand->images as $image)
                     <img src="{{ @App::make('url')->to('/') . '/storage' . $image->image}}" alt="" class="w-8/12 mx-auto">

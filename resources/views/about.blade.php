@@ -3,6 +3,20 @@
     About
 @endsection
 @section("content")
+    <link rel="stylesheet" type="text/css" href="./slick/slick.css"/>
+    <link rel="stylesheet" type="text/css" href="./slick/slick-theme.css"/>
+    <script src="./jquery.js"></script>
+    <script src="./slick/slick.min.js"></script>
+    <style>
+        .slick-list.draggable {
+            padding: 40px 0;
+        }
+        .slick-prev:before, .slick-next:before {
+            color: #999;
+            font-size: 20px;
+        }
+
+    </style>
     <div class="grid grid-cols-1 gap-12 lg:gap-24">
         <div class="relative">
             <img class="w-screen min-h-[70vh]" src="{{asset('/about.webp')}}" alt="">
@@ -101,20 +115,32 @@
         </div>
         {{--        --}}
         <div class="py-12 lg:p-24 text-center">
-            <h1 class="text-4xl lg:text-5xl font-medium mb-3"><span class="font-light">OUR</span> STRATEGY</h1>
+            <h1 class="text-4xl lg:text-5xl font-semibold mb-3"><span class="font-light">OUR</span> STRATEGY</h1>
             <p class="mb-12">A collective built on community.</p>
 
-            <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
-                <div class="aspect-[909/1136]">
-                    <img class="w-full h-full shadow-2xl " src="{{asset("/people.webp")}}"
+            <div class="responsive pb-8 ">
+                <div class="aspect-[909/1136] px-2 lg:px-4">
+                    <img class="w-full h-full shadow-xl " src="{{asset("/people.webp")}}"
                          alt="the chain people">
                 </div>
-                <div class="aspect-[909/1136]">
-                    <img class="w-full h-full shadow-2xl " src="{{asset("/partners.webp")}}"
+                <div class="aspect-[909/1136] px-2 lg:px-4">
+                    <img class="w-full h-full shadow-xl " src="{{asset("/partners.webp")}}"
                          alt="the chain partners">
                 </div>
-                <div class="aspect-[909/1136]">
-                    <img class="w-full h-full shadow-2xl " src="{{asset("/management.webp")}}"
+                <div class="aspect-[909/1136] px-2 lg:px-4">
+                    <img class="w-full h-full shadow-xl " src="{{asset("/management.webp")}}"
+                         alt="the chain management">
+                </div>
+                <div class="aspect-[909/1136] px-2 lg:px-4">
+                    <img class="w-full h-full shadow-xl " src="{{asset("/our-services.webp")}}"
+                         alt="the chain management">
+                </div>
+                <div class="aspect-[909/1136] px-2 lg:px-4">
+                    <img class="w-full h-full shadow-xl " src="{{asset("/our-values.webp")}}"
+                         alt="the chain management">
+                </div>
+                <div class="aspect-[909/1136] px-2 lg:px-4">
+                    <img class="w-full h-full shadow-xl" src="{{asset("/restaurants.webp")}}"
                          alt="the chain management">
                 </div>
             </div>
@@ -204,4 +230,38 @@
             </div>
         </div>
     </div>
+
+    <script>
+        $('.responsive').slick({
+            arrows: true,
+            speed: 300,
+            dots: true,
+            slidesToShow: 3,
+            slidesToScroll: 3,
+            centerPadding: "40px",
+            responsive: [
+                {
+                    breakpoint: 1024,
+                    settings: {
+                        arrows: true,
+                        slidesToShow: 3,
+                    }
+                },
+                {
+                    breakpoint: 600,
+                    settings: {
+                        arrows: true,
+                        slidesToShow: 2,
+                    }
+                },
+                {
+                    breakpoint: 480,
+                    settings: {
+                        arrows: true,
+                        slidesToShow: 1.5,
+                    }
+                }
+            ]
+        })
+    </script>
 @endsection

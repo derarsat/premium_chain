@@ -1,12 +1,16 @@
 <form class="p-4 rounded" method="POST" action="{{ route('brands.store') }}?model=area">
     @csrf
     <h1 class="py-4 font-light text-2xl text-gray-700">Create new area</h1>
-    <div class="grid grid-cols-3 gap-6">
+    <div class="grid grid-cols-4 gap-6">
         <div>
             <label for="name">Area name</label>
             <input type="text" name="name" id="name" placeholder="Enter area name" required />
         </div>
-
+        <div>
+            <label for="founded">Year Founded</label>
+            <input type="number" name="founded" id="founded" min="2000" max="3000" value="2023"
+                   placeholder="Enter brand founded year" required>
+        </div>
         <div>
             <label for="brand_id">Select brand</label>
             <select name="brand_id" id="brand_id">

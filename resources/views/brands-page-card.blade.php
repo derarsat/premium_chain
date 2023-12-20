@@ -24,7 +24,7 @@
             appearance: none;
             width: 49px;
             height: 49px;
-            background: url({{ @App::make('url')->to('/') . '/storage' . $brand->page_background}}) center center no-repeat; /* Set the background image */
+            background: url({{ @App::make('url')->to('/') . '/storage' . $brand->rating_icon}}) center center no-repeat; /* Set the background image */
             background-size: cover;
             cursor: pointer;
         }

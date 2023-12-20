@@ -6,10 +6,7 @@
             <label for="name">Name</label>
             <input type="text" name="name" id="name" placeholder="Enter brand name" required>
         </div>
-        <div>
-            <label for="founded">Year Founded</label>
-            <input type="number" name="founded" id="founded" min="2000" max="3000" value="2023" placeholder="Enter brand founded year" required>
-        </div>
+
         <div>
             <label for="color">Brand Color</label>
             <input style="padding:5px;height: 40px" type="color" name="color" id="color" required>
@@ -103,6 +100,12 @@
         <div class="col-span-4">
             <label for="menu_description">Menu description</label>
             <textarea class="h-32" name="menu_description" id="menu_description" placeholder="Enter menu description"
+                      required></textarea>
+
+        </div>
+        <div class="col-span-4">
+            <label for="atmosphere">Brand Atmosphere</label>
+            <textarea class="h-32" name="atmosphere" id="atmosphere" placeholder="Enter brand atmosphere"
                       required></textarea>
 
         </div>

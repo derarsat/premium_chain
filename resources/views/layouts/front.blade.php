@@ -28,7 +28,7 @@
         <div class=" border-t border-white ">
             <ul class="flex items-center justify-center gap-4 pt-4 text-white">
                 <li><a href="{{route('front.about')}}">About</a></li>
-                <li><a href="{{route('front.about')}}">Divisions</a></li>
+                <li><a href="/#divisions">Divisions</a></li>
                 <li><a href="{{route('front-brands.index')}}">Brands</a></li>
                 <li><a href="/#locations">Locations </a></li>
                 <li><a href="{{route('stay-connected')}}">Stay Connected</a></li>

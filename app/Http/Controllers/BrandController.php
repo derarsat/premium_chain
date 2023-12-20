@@ -56,14 +56,16 @@ class BrandController extends Controller
                 $validated = $request->validate([
                     'name' => 'required|max:255',
                     'description' => 'required',
+                    'atmosphere' => 'required',
                     'selling_point_description' => 'required',
                     'menu_description' => 'required',
                     'color' => 'required',
-                    'founded' => 'required',
+
                 ]);
                 $brand = new Brand();
                 $brand->name = $validated["name"];
-                $brand->founded = $validated["founded"];
+
+                $brand->atmosphere = $validated["atmosphere"];
                 $brand->color = $validated["color"];
                 $brand->description = $validated["description"];
                 $brand->selling_point_description = $validated["selling_point_description"];
@@ -86,12 +88,14 @@ class BrandController extends Controller
                 $validated = $request->validate([
                     'name' => 'required',
                     'lat' => 'required',
+                    'founded' => 'required',
                     'lng' => 'required',
                     'brand_id' => 'required',
                     'country_id' => 'required',
                 ]);
                 $area = new Area();
                 $area->name = $validated["name"];
+                $area->founded = $validated["founded"];
                 $area->lat = $validated['lat'];
                 $area->lng = $validated['lng'];
                 $area->brand_id = $validated['brand_id'];
@@ -141,6 +145,7 @@ class BrandController extends Controller
         $validated = $request->validate([
             'name' => 'required|max:255',
             'description' => 'required',
+            'atmosphere' => 'required',
             'selling_point_description' => 'required',
             'menu_description' => 'required',
             'color' => 'required',
@@ -148,6 +153,7 @@ class BrandController extends Controller
         $brand->name = $validated["name"];
         $brand->color = $validated["color"];
         $brand->description = $validated["description"];
+        $brand->atmosphere = $validated["atmosphere"];
         $brand->selling_point_description = $validated["selling_point_description"];
         $brand->menu_description = $validated["menu_description"];
 

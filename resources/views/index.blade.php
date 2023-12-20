@@ -79,7 +79,7 @@
             </div>
         </div>
         <x-locations/>
-        <div class="max-w-6xl px-4 lg:px-0  mx-auto">
+        <div class="max-w-6xl px-4 lg:px-0  mx-auto" id="divisions">
             <h1 class="text-4xl lg:text-5xl text-center uppercase">
                 <span class="font-light">our</span>
                 <span class="font-bold">Divisions </span>

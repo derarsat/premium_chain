@@ -109,7 +109,13 @@
                           required>
                     {{$brand->menu_description}}
                 </textarea>
-
+            </div>
+            <div class="col-span-4">
+                <label for="atmosphere">Brand atmosphere </label>
+                <textarea class="h-32" name="atmosphere" id="atmosphere" placeholder="Enter atmosphere"
+                          required>
+                    {{$brand->atmosphere}}
+                </textarea>
             </div>
         </div>
         <input type="submit" value="Save Brand">
