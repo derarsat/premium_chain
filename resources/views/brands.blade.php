@@ -2,9 +2,10 @@
 @extends('layouts.front')
 
 @section('content')
-    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
-    <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
-    <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="../slick/slick.css"/>
+    <link rel="stylesheet" type="text/css" href="../slick/slick-theme.css"/>
+    <script src="../jquery.js"></script>
+    <script src="../slick/slick.min.js"></script>
     <div class="carousel relative">
         @foreach ($images as $image )
             <div class="relative">
@@ -22,9 +23,11 @@
         $(document).ready(function () {
             $('.carousel').slick({
                 slidesToScroll: 1,
-                dots: true,
                 autoplay: true,
                 autoplaySpeed: 2000,
+                nextArrow: '<svg  fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="white" data-slot="icon" class="slick-next !w-8 !h-8"> <path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" /> </svg>',
+                prevArrow: '<svg  fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="white" data-slot="icon" class="slick-prev !w-8 !h-8"> <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5 8.25 12l7.5-7.5" /> </svg>',
+
             });
         });
     </script>
@@ -32,6 +35,7 @@
     <style>
         .slick-prev {
             left: 40px;
+            z-index: 10;
         }
 
 
@@ -42,10 +46,6 @@
 
 
 
-        .slick-prev:before,
-        .slick-next:before {
-            color: #fff;
-        }
     </style>
     <div class="container text-center py-12 lg:py-24 flex flex-col gap-6">
         <h1 class="text-4xl lg:text-5xl">OUR <span class="font-bold">SUCCESSFUL BRANDS</span></h1>

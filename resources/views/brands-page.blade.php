@@ -5,10 +5,10 @@
     <script
         src="https://maps.googleapis.com/maps/api/js?key={{env('MAP_KEY')}}&callback=initMaps"
         defer></script>
-    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
-    <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
-    <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
-
+    <link rel="stylesheet" type="text/css" href="../slick/slick.css"/>
+    <link rel="stylesheet" type="text/css" href="../slick/slick-theme.css"/>
+    <script src="../jquery.js"></script>
+    <script src="../slick/slick.min.js"></script>
     <div class="relative ">
         <div class="min-h-[120vh]"
              style="background: url({{ @App::make('url')->to('/') . '/storage' . $brand->hero_image}})">
@@ -18,7 +18,8 @@
             class="absolute bg-gradient-to-t from-[rgba(250,250,250,1)] to-transparent via-[rgba(0,0,0,0.4)] inset-0 text-white text-center flex items-center justify-center flex-col z-10">
             <div class="max-w-4xl px-4 lg:px-0 flex flex-col gap-8 ">
                 @if($brand->light_logo)
-                    <img class=" w-64 lg:w-96 mx-auto" src="{{ @App::make('url')->to('/') . '/storage' . $brand->light_logo}}"
+                    <img class=" w-64 lg:w-96 mx-auto"
+                         src="{{ @App::make('url')->to('/') . '/storage' . $brand->light_logo}}"
                          alt="{{$brand->name}}">
                 @endif
                 <h4 class="font-light stroke-text">{{$brand->description}}</h4>
@@ -31,14 +32,24 @@
         <p>{{$brand->atmosphere}}</p>
         <div class="carousel mt-12 w-full">
             @foreach ($brand->images as $image)
-                    <img src="{{ @App::make('url')->to('/') . '/storage' . $image->image}}" alt="" class="w-8/12 mx-auto">
+                <img src="{{ @App::make('url')->to('/') . '/storage' . $image->image}}" alt="" class="w-8/12 mx-auto">
             @endforeach
         </div>
     </div>
+    <style>
+        .slick-prev {
+            left: -50px;
+        }
+        .slick-next {
+            right: -50px;
+        }
+    </style>
     <script>
         $(document).ready(function () {
             $('.carousel').slick({
-                dots:true
+                arrows: true,
+                nextArrow: '<svg  fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="black" data-slot="icon" class="slick-next !w-8 !h-8"> <path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" /> </svg>',
+                prevArrow: '<svg  fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="black" data-slot="icon" class="slick-prev !w-8 !h-8"> <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5 8.25 12l7.5-7.5" /> </svg>',
             });
         });
     </script>
@@ -84,22 +95,22 @@
 
         <div class=" shadow-xl">
 
-        <div class="relative ">
-            <div class="min-h-[60vh]"
-                 style="background: url({{ @App::make('url')->to('/') . '/storage' . $brand->menu_image}})">
+            <div class="relative ">
+                <div class="min-h-[60vh]"
+                     style="background: url({{ @App::make('url')->to('/') . '/storage' . $brand->menu_image}})">
 
+                </div>
             </div>
-        </div>
-        <p class="text-left px-4 py-12">
-            {{$brand->menu_description}}
-        </p>
+            <p class="text-left px-4 py-12">
+                {{$brand->menu_description}}
+            </p>
         </div>
 
     </div>
 
     <div class="py-12 lg:py-24 max-w-7xl text-center mx-auto px-4 lg:px-0">
         <h1 class="text-center text-4xl lg:text-5xl font-light mb-12 uppercase">
-            A UNIQUE  <span class="font-bold">Selling Point</span>
+            A UNIQUE <span class="font-bold">Selling Point</span>
         </h1>
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-24 py-24 ">
             <style>
@@ -130,7 +141,8 @@
             class="absolute bg-gradient-to-t from-[rgba(0,0,0,1)] to-transparent via-[rgba(0,0,0,0.4)] inset-0 text-white text-center flex items-center justify-center flex-col z-10">
             <div class="max-w-4xl px-4 lg:px-0 flex flex-col gap-8">
                 <h1 class="text-4xl lg:text-5xl  uppercase">We value <span class="font-bold"> your opinion</span></h1>
-                <h4 class="font-light">the chain can provide businesses with the following services to grow and find success.  </h4>
+                <h4 class="font-light">the chain can provide businesses with the following services to grow and find
+                    success. </h4>
                 <div class="flex justify-center">
                     <a href="{{route('single-brand-card',$brand->id)}}"
                        class="bg-[#DCDAD4] text-black px-8 py-3 uppercase font-medium text-xl">Rate your experience</a>

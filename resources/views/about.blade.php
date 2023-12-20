@@ -8,13 +8,7 @@
     <script src="./jquery.js"></script>
     <script src="./slick/slick.min.js"></script>
     <style>
-        .slick-list.draggable {
-            padding: 40px 0;
-        }
-        .slick-prev:before, .slick-next:before {
-            color: #999;
-            font-size: 20px;
-        }
+
 
     </style>
     <div class="grid grid-cols-1 gap-12 lg:gap-24">
@@ -117,7 +111,6 @@
         <div class="py-12 lg:p-24 text-center">
             <h1 class="text-4xl lg:text-5xl font-semibold mb-3"><span class="font-light">OUR</span> STRATEGY</h1>
             <p class="mb-12">A collective built on community.</p>
-
             <div class="responsive pb-8 ">
                 <div class="aspect-[909/1136] px-2 lg:px-4">
                     <img class="w-full h-full shadow-xl " src="{{asset("/people.webp")}}"
@@ -234,8 +227,10 @@
     <script>
         $('.responsive').slick({
             arrows: true,
+            nextArrow: '<svg  fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="black" data-slot="icon" class="slick-next !w-8 !h-8"> <path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" /> </svg>',
+            prevArrow: '<svg  fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="black" data-slot="icon" class="slick-prev !w-8 !h-8"> <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5 8.25 12l7.5-7.5" /> </svg>',
+
             speed: 300,
-            dots: true,
             slidesToShow: 3,
             slidesToScroll: 3,
             centerPadding: "40px",
