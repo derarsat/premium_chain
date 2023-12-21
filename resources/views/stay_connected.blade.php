@@ -8,7 +8,7 @@
         <div
             class="absolute bg-gradient-to-t from-[rgba(250,250,250,1)] to-transparent via-[rgba(0,0,0,0.4)] inset-0 text-white text-center flex items-center justify-center flex-col z-10">
             <div class="max-w-4xl px-4 lg:px-0 flex flex-col gap-8">
-                <h1 class="text-4xl lg:text-5xl font-bold">Get in Touch </h1>
+                <h1 class="text-4xl lg:text-5xl font-bold uppercase">Get in Touch </h1>
                 <h4 class="font-light">the chain travels the world with operations in 8 diverse countries.
                     Headquartered in Riyadh, our consultancy and management agency boasts 25 years of experience as the
                     forefront of our work. </h4>

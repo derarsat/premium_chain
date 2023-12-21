@@ -112,7 +112,7 @@
         <h1 class="text-center text-4xl lg:text-5xl font-light mb-12 uppercase">
             A UNIQUE <span class="font-bold">Selling Point</span>
         </h1>
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-24 py-24 ">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-24 py-24 items-center ">
             <style>
                 .with-shadow::after {
                     width: 70%;

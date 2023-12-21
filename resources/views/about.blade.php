@@ -108,34 +108,32 @@
             </div>
         </div>
         {{--        --}}
+        <style>
+            .slick-slide {
+                margin: 0 1.5rem;
+            }
+            .slick-list {
+                /*margin: 0 -1.5rem;*/
+                padding-bottom:3rem ;
+            }
+        </style>
         <div class="py-12 lg:p-24 text-center">
             <h1 class="text-4xl lg:text-5xl font-semibold mb-3"><span class="font-light">OUR</span> STRATEGY</h1>
             <p class="mb-12">A collective built on community.</p>
-            <div class="responsive pb-8 ">
-                <div class="aspect-[909/1136] px-2 lg:px-4">
-                    <img class="w-full h-full shadow-xl " src="{{asset("/people.webp")}}"
-                         alt="the chain people">
-                </div>
-                <div class="aspect-[909/1136] px-2 lg:px-4">
-                    <img class="w-full h-full shadow-xl " src="{{asset("/partners.webp")}}"
-                         alt="the chain partners">
-                </div>
-                <div class="aspect-[909/1136] px-2 lg:px-4">
-                    <img class="w-full h-full shadow-xl " src="{{asset("/management.webp")}}"
-                         alt="the chain management">
-                </div>
-                <div class="aspect-[909/1136] px-2 lg:px-4">
-                    <img class="w-full h-full shadow-xl " src="{{asset("/our-services.webp")}}"
-                         alt="the chain management">
-                </div>
-                <div class="aspect-[909/1136] px-2 lg:px-4">
-                    <img class="w-full h-full shadow-xl " src="{{asset("/our-values.webp")}}"
-                         alt="the chain management">
-                </div>
-                <div class="aspect-[909/1136] px-2 lg:px-4">
-                    <img class="w-full h-full shadow-xl" src="{{asset("/restaurants.webp")}}"
-                         alt="the chain management">
-                </div>
+            <div class="responsive py-8 max-w-6xl mx-auto ">
+                <img class="w-full h-full shadow-xl " src="{{asset("/people.webp")}}"
+                     alt="the chain people">
+                <img class="w-full h-full shadow-xl " src="{{asset("/partners.webp")}}"
+                     alt="the chain partners">
+                <img class="w-full h-full shadow-xl " src="{{asset("/management.webp")}}"
+                     alt="the chain management">
+                <img class="w-full h-full shadow-xl " src="{{asset("/our-services.webp")}}"
+                     alt="the chain management">
+                <img class="w-full h-full shadow-xl " src="{{asset("/our-values.webp")}}"
+                     alt="the chain management">
+
+                <img class="w-full h-full shadow-xl" src="{{asset("/restaurants.webp")}}"
+                     alt="the chain management">
             </div>
         </div>
         {{--        --}}

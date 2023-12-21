@@ -335,6 +335,7 @@
 
     const groupBy = (x, f) => x.reduce((a, b, i) => ((a[f(b, i, x)] ||= []).push(b), a), {});
     const jsonAreas = @json($areas);
+    console.log(jsonAreas)
     const groupByYear = groupBy(jsonAreas, (x) => x.founded);
     // loop through the years and create a button for each year in #top
     const topWrapper = document.getElementById("top");
@@ -346,11 +347,13 @@
         button.innerHTML = year;
         const brandWrapper = document.createElement("div");
         brandWrapper.classList.add("hidden", "absolute", "top-10", "left-0", "w-full", "bg-gray-200", "group-hover:block");
+        console.log(groupByYear)
         groupByYear[year].map((area) => {
             brandWrapper.innerHTML += `
             <div class="area-zebra">
                 <img class="w-full transition hover:scale-105 "  src="{{ @App::make('url')->to('/') . '/storage' }}${area.brand.light_logo}"
                                      alt="${area.brand.name}">
+                                     ${area["name"]}
             </div>
 
             `;
