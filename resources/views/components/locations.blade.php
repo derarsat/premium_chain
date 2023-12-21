@@ -335,7 +335,6 @@
 
     const groupBy = (x, f) => x.reduce((a, b, i) => ((a[f(b, i, x)] ||= []).push(b), a), {});
     const jsonAreas = @json($areas);
-    console.log(jsonAreas)
     const groupByYear = groupBy(jsonAreas, (x) => x.founded);
     // loop through the years and create a button for each year in #top
     const topWrapper = document.getElementById("top");
@@ -346,14 +345,16 @@
         button.classList.add("bg-gray-500", "text-white", "px-8", "py-2", "relative", "group", "text-center")
         button.innerHTML = year;
         const brandWrapper = document.createElement("div");
-        brandWrapper.classList.add("hidden", "absolute", "top-10", "left-0", "w-full", "bg-gray-200", "group-hover:block");
-        console.log(groupByYear)
+        brandWrapper.classList.add("hiddens", "absolute", "top-10", "left-0", "w-full", "bg-gray-200", "group-hover:block");
+        groupByYear[year].sort((a, b) => {
+            return a.brand_id - b.brand_id
+        })
         groupByYear[year].map((area) => {
             brandWrapper.innerHTML += `
             <div class="area-zebra">
-                <img class="w-full transition hover:scale-105 "  src="{{ @App::make('url')->to('/') . '/storage' }}${area.brand.light_logo}"
+                <img class="w-full to-check transition hover:scale-105 "  src="{{ @App::make('url')->to('/') . '/storage' }}${area.brand.light_logo}"
                                      alt="${area.brand.name}">
-                                     ${area["name"]}
+                                     <p class="mt-2">${area["name"]}</p>
             </div>
 
             `;
@@ -371,5 +372,27 @@
         });
         topWrapper.appendChild(button);
     }
+
+
+    var images = document.querySelectorAll('.to-check');
+
+    images.forEach(function (image, index) {
+        var src = image.getAttribute('src');
+        var parentParent = image.parentElement.parentElement;
+
+        // Check if there are other images with the same src within the same parent's parent
+        var duplicateImages = Array.from(parentParent.querySelectorAll('.to-check[src="' + src + '"]'));
+
+        if (duplicateImages.length > 1) {
+            // Hide all duplicates except the first one
+            duplicateImages.forEach(function (duplicate, duplicateIndex) {
+                if (duplicateIndex !== 0) {
+                    duplicate.style.display = 'none';
+                }
+            });
+        }
+    });
+
+    document.querySelector('.to-check').classList.add('block');
 
 </script>

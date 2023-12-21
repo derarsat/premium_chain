@@ -104,10 +104,9 @@ select {
 .area-zebra{
     @apply bg-[#576871] p-2
 }
-.area-zebra:nth-child(n+2){
-    @apply bg-black
 
-}
+
+
 
 
 .slick-prev:before {
