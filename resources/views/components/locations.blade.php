@@ -345,7 +345,7 @@
         button.classList.add("bg-gray-500", "text-white", "px-8", "py-2", "relative", "group", "text-center")
         button.innerHTML = year;
         const brandWrapper = document.createElement("div");
-        brandWrapper.classList.add("hiddens", "absolute", "top-10", "left-0", "w-full", "bg-gray-200", "group-hover:block");
+        brandWrapper.classList.add("hidden", "absolute", "top-10", "left-0", "w-full", "bg-gray-200", "group-hover:block");
         groupByYear[year].sort((a, b) => {
             return a.brand_id - b.brand_id
         })
